@@ -25,16 +25,15 @@
             background-color: var(--rosa-pastel); 
         }
         
-       .area-boton {
+        .area-boton {
             width: 100%;
             max-width: 800px;
-            height: 100px; 
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
         }
 
-        
         .boton-corazon {
             position: relative;
             width: 50px;
@@ -45,9 +44,8 @@
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            margin-left: 30px; 
-            box-shadow: -5px 5px 15px rgba(255, 105, 180, 0.4);
-            transition: transform 0.3s ease;
+            margin-left: 50px; 
+            margin-top: 30px;
         }
 
         .boton-corazon::before,
@@ -60,27 +58,14 @@
             border-radius: 50%;
         }
 
-        .boton-corazon::before {
-            top: -25px;
-            left: 0;
-        }
-
-        .boton-corazon::after {
-            top: 0;
-            left: 25px;
-        }
+        .boton-corazon::before { top: -25px; left: 0; }
+        .boton-corazon::after { top: 0; left: 25px; }
 
         .texto-boton {
             transform: rotate(45deg); 
-            color: white;
             font-weight: bold;
             font-size: 10px;
             z-index: 10;
-            text-align: center;
-        }
-
-        .boton-corazon:hover {
-            transform: rotate(-45deg) scale(1.1);
         }
 
         header {
@@ -268,6 +253,7 @@
 
 </body>
 </html>
+
 
 
 
