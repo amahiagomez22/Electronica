@@ -24,6 +24,60 @@
             padding: 20px;
             background-color: var(--rosa-pastel); 
         }
+        
+        .nav-container {
+            margin-bottom: 40px;
+            padding-top: 10px;
+        }
+
+        .heart-button {
+            position: relative;
+            width: 60px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .heart-button::before,
+        .heart-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 30px;
+            height: 50px;
+            background: var(--rosa-oscuro);
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+            left: 30px;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+        }
+
+        .heart-button::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
+        .heart-text {
+            position: absolute;
+            z-index: 10;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            top: 15px;
+            pointer-events: none; 
+        }
+
+        .heart-button:hover {
+            transform: scale(1.15); 
+        }
+        
 
         header {
             text-align: center;
@@ -133,6 +187,12 @@
 </head>
 <body>
 
+<div class="nav-container">
+        <a href="https://jarudev.github.io/itcts4z/" class="heart-button">
+            <span class="heart-text">VOLVER</span>
+        </a>
+    </div>
+    
 <header>
     <h1>Principios de Electricidad</h1>
 </header>
