@@ -25,59 +25,63 @@
             background-color: var(--rosa-pastel); 
         }
         
-        .nav-container {
-            margin-bottom: 40px;
-            padding-top: 10px;
+       .area-boton {
+            width: 100%;
+            max-width: 800px;
+            height: 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
 
-        .heart-button {
+        
+        .boton-corazon {
             position: relative;
-            width: 60px;
+            width: 50px;
             height: 50px;
+            background-color: var(--rosa-oscuro);
+            transform: rotate(-45deg);
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            cursor: pointer;
+            margin-left: 30px; 
+            box-shadow: -5px 5px 15px rgba(255, 105, 180, 0.4);
             transition: transform 0.3s ease;
         }
 
-        .heart-button::before,
-        .heart-button::after {
+        .boton-corazon::before,
+        .boton-corazon::after {
             content: "";
             position: absolute;
-            top: 0;
-            width: 30px;
+            width: 50px;
             height: 50px;
-            background: var(--rosa-oscuro);
-            border-radius: 50px 50px 0 0;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-            left: 30px;
-            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+            background-color: var(--rosa-oscuro);
+            border-radius: 50%;
         }
 
-        .heart-button::after {
+        .boton-corazon::before {
+            top: -25px;
             left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-        
-        .heart-text {
-            position: absolute;
-            z-index: 10;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            text-align: center;
-            top: 15px;
-            pointer-events: none; 
         }
 
-        .heart-button:hover {
-            transform: scale(1.15); 
+        .boton-corazon::after {
+            top: 0;
+            left: 25px;
         }
-        
+
+        .texto-boton {
+            transform: rotate(45deg); 
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .boton-corazon:hover {
+            transform: rotate(-45deg) scale(1.1);
+        }
 
         header {
             text-align: center;
@@ -256,5 +260,6 @@
 
 </body>
 </html>
+
 
 
