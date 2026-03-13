@@ -26,48 +26,52 @@
         }
         
         .area-boton {
+            padding: 40px; 
             width: 100%;
-            max-width: 800px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
         }
 
         .boton-corazon {
             position: relative;
-            width: 50px;
-            height: 50px;
-            background-color: var(--rosa-oscuro);
+            width: 60px;
+            height: 60px;
+            background-color: #ff69b4 !important; /* Rosa fuerte directo */
             transform: rotate(-45deg);
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            margin-left: 50px; 
-            margin-top: 30px;
+            margin-left: 20px;
         }
 
         .boton-corazon::before,
         .boton-corazon::after {
             content: "";
             position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: var(--rosa-oscuro);
+            width: 60px;
+            height: 60px;
+            background-color: #ff69b4 !important;
             border-radius: 50%;
         }
 
-        .boton-corazon::before { top: -25px; left: 0; }
-        .boton-corazon::after { top: 0; left: 25px; }
-
-        .texto-boton {
-            transform: rotate(45deg); 
-            font-weight: bold;
-            font-size: 10px;
-            z-index: 10;
+        .boton-corazon::before {
+            top: -30px;
+            left: 0;
         }
 
+        .boton-corazon::after {
+            top: 0;
+            left: 30px;
+        }
+
+        .texto-boton {
+            transform: rotate(45deg);
+            color: white !important;
+            font-weight: bold;
+            font-size: 12px;
+            z-index: 100;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
         header {
             text-align: center;
             padding: 50px 0;
@@ -176,9 +180,9 @@
 </head>
 <body>
 
-<div class="nav-container">
-        <a href="https://jarudev.github.io/itcts4z/" class="heart-button">
-            <span class="heart-text">VOLVER</span>
+<div class="area-boton">
+        <a href="https://jarudev.github.io/itcts4z/" class="boton-corazon">
+            <span class="texto-boton">VOLVER</span>
         </a>
     </div>
     
@@ -253,6 +257,7 @@
 
 </body>
 </html>
+
 
 
 
