@@ -10,7 +10,7 @@
             --rosa-oscuro: #ff69b4;
             --lila: #e0d1ff;
             --lila-oscuro: #6a4c93;
-            --blanco: #ffffff;
+            --gris-suave: #f0f0f0;
         }
 
         body {
@@ -37,54 +37,58 @@
         h1 {
             color: var(--lila-oscuro);
             margin-bottom: 10px;
-            font-size: 2rem;
-        }
-
-        p {
-            color: #777;
-            margin-bottom: 30px;
         }
 
         .menu-opciones {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .opcion-card {
             text-decoration: none;
-            padding: 20px;
+            padding: 18px;
             border-radius: 20px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            border: 2px solid transparent;
         }
 
         .opcion-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        /* Estilo para el botón Rosa */
+        /* Botón Rosa Local */
         .btn-leyes {
             background-color: var(--rosa);
             color: white;
-            border: 2px solid var(--rosa-oscuro);
+            border-color: var(--rosa-oscuro);
         }
 
-        /* Estilo para el botón Lila */
+        /* Botón Lila Local */
         .btn-taller {
             background-color: var(--lila);
             color: var(--lila-oscuro);
-            border: 2px solid var(--medium-lila);
+            border-color: var(--lila-oscuro);
         }
 
-        .corazon {
-            color: var(--rosa-oscuro);
+        /* Botón Externo (El que pediste) */
+        .btn-externo {
+            background-color: var(--gris-suave);
+            color: #555;
+            border-color: #ccc;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .btn-externo:hover {
+            background-color: #e0e0e0;
         }
 
         footer {
@@ -97,16 +101,22 @@
 <body>
 
     <div class="contenedor-indice">
-        <h1>Mi Portafolio <span class="corazon">♥</span></h1>
-        <p>Selecciona una sección para explorar los conceptos de electricidad:</p>
+        <h1>Mi Portafolio ♥</h1>
+        <p>Explora las secciones de electricidad y electrónica:</p>
 
         <div class="menu-opciones">
             <a href="leyes_fundamentales.html" class="opcion-card btn-leyes">
-                <span>1. Leyes Fundamentales</span>
+                1. Leyes Fundamentales (Rosa)
             </a>
 
             <a href="taller_investigacion.html" class="opcion-card btn-taller">
-                <span>2. Taller de Investigación</span>
+                2. Taller de Investigación (Lila)
+            </a>
+
+            <hr style="width: 80%; border: 0.5px solid #eee; margin: 10px auto;">
+
+            <a href="https://jarudev.github.io/itcts4z/" class="opcion-card btn-externo">
+                Ir a Página Principal (ITCTS4Z)
             </a>
         </div>
 
