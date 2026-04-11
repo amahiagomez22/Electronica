@@ -62,13 +62,15 @@
         .seccion-rosa { background: var(--rosa-pastel); border: 2px solid var(--rosa-principal); }
         .seccion-lila { background: white; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
 
-        /* CARDS */
+        /* CARDS ROSA */
         .card { background: white; padding: 25px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .formula { background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 20px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.4em; margin: 20px 0; border-left: 6px solid var(--rosa-oscuro); }
 
-        /* BLOQUES LILA */
+        /* ESTILOS LILA */
         .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 25px 0; }
+        .lila-bloque:last-child { border-bottom: none; }
         .item-lila { background: #faf9ff; padding: 20px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 20px; }
+        .fase-titulo { color: var(--dark-lila); font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 10px; }
         
         img { max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0; display: block; margin-left: auto; margin-right: auto; }
         .img-borde { border: 1px solid #eee; }
@@ -90,7 +92,7 @@
 <div class="container">
 
     <article id="leyes-rosa" class="seccion-rosa">
-        <h1 style="color: var(--rosa-oscuro); text-align: center;">Principios de Electricidad</h1>
+        <h1 style="color: var(--rosa-oscuro); text-align: center;">Principios de Electricidad ♥</h1>
         
         <section class="card">
             <h2>1. Ley de Ohm</h2>
@@ -101,7 +103,7 @@
 
         <section class="card">
             <h2>2. Ley de Watt</h2>
-            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos.</p>
+            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos o tus servidores.</p>
             <div class="formula">P = V × I</div>
             <ul style="list-style: none; padding: 0;">
                 <li>♥ <strong>P:</strong> Potencia (Vatios o Watts)</li>
@@ -113,7 +115,7 @@
     </article>
 
     <article id="taller-lila" class="seccion-lila">
-        <h1 style="color: var(--dark-lila); text-align: center;">Taller de Investigación</h1>
+        <h1 style="color: var(--dark-lila); text-align: center; margin-bottom: 40px;">Taller de Investigación</h1>
 
         <div class="lila-bloque">
             <h2>Bloque 3: Circuitos</h2>
@@ -121,7 +123,7 @@
                 <p><strong>Ánodo:</strong> Entrada de corriente. <strong>Cátodo:</strong> Salida de corriente.</p>
                 <p><strong>Fuente:</strong> Suministra energía. <strong>Receptor:</strong> Consume energía (Bombilla, motor).</p>
             </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisPqGfE8V2x2qL6R8n9h4Jk7H9k3X4c2V9b8n7m6l5k4j3h2g1f0d9s8a7z6x5c4v3b2n1m/s1600/electrical-circuit-components-and-their-symbols.jpg" class="img-borde" alt="Componentes y Símbolos">
+            <img src="https://i.ibb.co/LhY0Z6K/symbols.jpg" class="img-borde" alt="Componentes y Símbolos Eléctricos">
         </div>
 
         <div class="lila-bloque">
@@ -130,39 +132,37 @@
                 <p><strong>Electricidad:</strong> Transporte de energía en grandes cantidades.</p>
                 <p><strong>Electrónica:</strong> Control preciso del flujo para procesar información.</p>
             </div>
-            <h3>Fase 4: Analogía Hidráulica</h3>
+            
+            <span class="fase-titulo">Fase 4: Analogía Hidráulica</span>
             <div class="item-lila">
                 <p>Voltaje = Altura del tanque (Presión). Corriente = Caudal de agua. Resistencia = Boquilla o filtro.</p>
             </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Z4_u2q9R9X_z8J_f1h2k3l4m5n6o7p8q9r0s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5h6i7j8k9l0/s1600/analogia-hidraulica.jpg" alt="Analogía Hidráulica">
+            <img src="https://i.ibb.co/VqnY4pW/hidraulica.jpg" alt="Analogía Hidráulica">
         </div>
 
         <div class="lila-bloque">
             <h2>Bloque 5: Magnitudes y Análisis</h2>
             <div class="item-lila">
-                <p><strong>Magnitudes Principales:</strong> Voltaje (V), Corriente (I), Resistencia (R), Potencia (P).</p>
+                <p><strong>Voltaje (V), Corriente (I), Resistencia (R), Potencia (P).</strong></p>
             </div>
-            <h3>Fase 5: El Bombillo</h3>
-            <div class="item-lila">
-                <p>Enciende igual en ambos sentidos porque el brillo depende de los choques (fricción) de electrones en el filamento.</p>
-            </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_flujo_electrico_circuito_bombillo/s1600/circuito-bombillo.png" alt="Flujo en el bombillo">
-        </div>
 
-        <div class="lila-bloque">
-            <h3>Fases Adicionales</h3>
+            <span class="fase-titulo">Fases de Análisis</span>
             <div class="item-lila">
-                <p><strong>Fase 2:</strong> ¿Por qué los electrones necesitan energía? Porque los átomos los mantienen atrapados. El voltaje es el empujón.</p>
+                <p><strong>Fase 2:</strong> ¿Por qué los electrones necesitan energía para moverse? Porque los átomos los mantienen atrapados. El voltaje es el empujón que los obliga a avanzar.</p>
             </div>
             <div class="item-lila">
-                <p><strong>Fase 3: Cargador de Celular</strong> - Reduce voltaje (110V a 5V), convierte AC a DC y genera calor por el Efecto Joule.</p>
+                <p><strong>Fase 3: Situación Cargador de Celular</strong> - El cargador reduce el voltaje (110V a 5V) y convierte AC a DC. Ocurre calentamiento por Efecto Joule debido a la resistencia de los componentes.</p>
             </div>
+            <div class="item-lila">
+                <p><strong>Fase 5: El Bombillo</strong> - Enciende igual en ambos sentidos porque el brillo depende de los choques (fricción) de electrones en el filamento.</p>
+            </div>
+            <img src="https://i.ibb.co/6Y0Z2j4/bombillo.png" alt="Flujo Eléctrico Bombillo">
         </div>
     </article>
 </div>
 
 <footer>
-    <p style="text-align: center; color: #888; padding: 40px;">&copy; 2026 - Educación y Ciencia ♥</p>
+    <p style="text-align: center; color: #888; padding: 40px;">&copy; 2026 - Taller Final ♥</p>
 </footer>
 
 </body>
