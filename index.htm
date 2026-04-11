@@ -26,57 +26,60 @@
             padding: 0;
         }
 
+        /* BOTÓN VOLVER */
         .area-boton-principal {
             padding: 40px 0 20px 0;
             display: flex;
             justify-content: center;
         }
-
         .boton-corazon {
             position: relative; width: 60px; height: 60px;
             background-color: var(--rosa-oscuro); transform: rotate(-45deg);
             display: flex; justify-content: center; align-items: center; text-decoration: none;
         }
-
         .boton-corazon::before, .boton-corazon::after {
             content: ""; position: absolute; width: 60px; height: 60px;
             background-color: var(--rosa-oscuro); border-radius: 50%;
         }
-
         .boton-corazon::before { top: -30px; left: 0; }
         .boton-corazon::after { top: 0; left: 30px; }
-
         .texto-boton { transform: rotate(45deg); color: white; font-weight: bold; font-size: 12px; z-index: 10; }
 
+        /* NAVEGACIÓN */
         nav.indice {
             background: white; position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: center; gap: 15px; padding: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
         nav.indice a { text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; }
         .btn-rosa { background: var(--rosa-principal); color: white; }
         .btn-lila { background: var(--primary-lila); color: var(--dark-lila); }
 
         .container { max-width: 900px; margin: 20px auto; padding: 20px; }
 
+        /* SECCIONES */
         .seccion-rosa, .seccion-lila { padding: 30px; border-radius: 15px; margin-bottom: 50px; }
         .seccion-rosa { background: var(--rosa-pastel); border: 2px solid var(--rosa-principal); }
         .seccion-lila { background: white; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
 
+        /* CARDS */
         .card { background: white; padding: 25px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .formula { background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.3em; margin: 15px 0; border-left: 5px solid var(--rosa-oscuro); }
+        .formula { background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 20px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.4em; margin: 20px 0; border-left: 6px solid var(--rosa-oscuro); }
 
-        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 20px 0; }
-        .item-lila { background: #faf9ff; padding: 20px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 15px; }
+        /* BLOQUES LILA */
+        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 25px 0; }
+        .item-lila { background: #faf9ff; padding: 20px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 20px; }
         
-        img { max-width: 100%; height: auto; border-radius: 10px; margin: 15px 0; display: block; margin-left: auto; margin-right: auto; border: 1px solid #eee; }
+        img { max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0; display: block; margin-left: auto; margin-right: auto; }
+        .img-borde { border: 1px solid #eee; }
     </style>
 </head>
 <body>
 
 <div class="area-boton-principal">
-    <a href="#" class="boton-corazon"><span class="texto-boton">VOLVER</span></a>
+    <a href="https://jarudev.github.io/itcts4z/" class="boton-corazon">
+        <span class="texto-boton">VOLVER</span>
+    </a>
 </div>
 
 <nav class="indice">
@@ -87,64 +90,79 @@
 <div class="container">
 
     <article id="leyes-rosa" class="seccion-rosa">
-        <h1 style="color: var(--rosa-oscuro); text-align: center;">Principios de Electricidad ♥</h1>
+        <h1 style="color: var(--rosa-oscuro); text-align: center;">Principios de Electricidad</h1>
         
-        <div class="card">
+        <section class="card">
             <h2>1. Ley de Ohm</h2>
             <p>Describe cómo el Voltaje se relaciona con la Corriente y la Resistencia.</p>
             <div class="formula">V = I × R</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ohm%27s_law_formula_wheel.svg/1024px-Ohm%27s_law_formula_wheel.svg.png" alt="Rueda Ley de Ohm">
-        </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ohm%27s_law_formula_wheel.svg/1024px-Ohm%27s_law_formula_wheel.svg.png" alt="Ley de Ohm">
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>2. Ley de Watt</h2>
-            <p>Define la Potencia Eléctrica consumida o generada.</p>
+            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos.</p>
             <div class="formula">P = V × I</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ohms_Law_Wheel.svg/1024px-Ohms_Law_Wheel.svg.png" alt="Rueda de Watt y Ohm">
-        </div>
+            <ul style="list-style: none; padding: 0;">
+                <li>♥ <strong>P:</strong> Potencia (Vatios o Watts)</li>
+                <li>♥ <strong>V:</strong> Voltaje (Voltios)</li>
+                <li>♥ <strong>I:</strong> Corriente (Amperios)</li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ohms_Law_Wheel.svg/1024px-Ohms_Law_Wheel.svg.png" alt="Ley de Watt">
+        </section>
     </article>
 
     <article id="taller-lila" class="seccion-lila">
         <h1 style="color: var(--dark-lila); text-align: center;">Taller de Investigación</h1>
 
         <div class="lila-bloque">
-            <h3>Bloque 3: Circuitos</h3>
+            <h2>Bloque 3: Circuitos</h2>
             <div class="item-lila">
                 <p><strong>Ánodo:</strong> Entrada de corriente. <strong>Cátodo:</strong> Salida de corriente.</p>
                 <p><strong>Fuente:</strong> Suministra energía. <strong>Receptor:</strong> Consume energía (Bombilla, motor).</p>
             </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisPqGfE8V2x2qL6R8n9h4Jk7H9k3X4c2V9b8n7m6l5k4j3h2g1f0d9s8a7z6x5c4v3b2n1m/s1600/electrical-circuit-components-and-their-symbols.jpg" alt="Símbolos de circuitos">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisPqGfE8V2x2qL6R8n9h4Jk7H9k3X4c2V9b8n7m6l5k4j3h2g1f0d9s8a7z6x5c4v3b2n1m/s1600/electrical-circuit-components-and-their-symbols.jpg" class="img-borde" alt="Componentes y Símbolos">
         </div>
 
         <div class="lila-bloque">
-            <h3>Bloque 4: Comprensión</h3>
+            <h2>Bloque 4: Comprensión</h2>
             <div class="item-lila">
                 <p><strong>Electricidad:</strong> Transporte de energía en grandes cantidades.</p>
                 <p><strong>Electrónica:</strong> Control preciso del flujo para procesar información.</p>
             </div>
+            <h3>Fase 4: Analogía Hidráulica</h3>
             <div class="item-lila">
-                <p><strong>Fase 4: Analogía Hidráulica</strong></p>
-                <p>Voltaje = Altura/Presión. Corriente = Caudal. Resistencia = Tamaño de tubería.</p>
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Z4_u2q9R9X_z8J_f1h2k3l4m5n6o7p8q9r0s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5h6i7j8k9l0/s1600/analogia-hidraulica.jpg" alt="Analogía Hidráulica">
+                <p>Voltaje = Altura del tanque (Presión). Corriente = Caudal de agua. Resistencia = Boquilla o filtro.</p>
             </div>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Z4_u2q9R9X_z8J_f1h2k3l4m5n6o7p8q9r0s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5h6i7j8k9l0/s1600/analogia-hidraulica.jpg" alt="Analogía Hidráulica">
         </div>
 
         <div class="lila-bloque">
-            <h3>Bloque 5: Magnitudes y Análisis</h3>
+            <h2>Bloque 5: Magnitudes y Análisis</h2>
             <div class="item-lila">
-                <p><strong>Magnitudes:</strong> Voltaje (V), Corriente (I), Resistencia (R), Potencia (P).</p>
+                <p><strong>Magnitudes Principales:</strong> Voltaje (V), Corriente (I), Resistencia (R), Potencia (P).</p>
+            </div>
+            <h3>Fase 5: El Bombillo</h3>
+            <div class="item-lila">
+                <p>Enciende igual en ambos sentidos porque el brillo depende de los choques (fricción) de electrones en el filamento.</p>
+            </div>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_flujo_electrico_circuito_bombillo/s1600/circuito-bombillo.png" alt="Flujo en el bombillo">
+        </div>
+
+        <div class="lila-bloque">
+            <h3>Fases Adicionales</h3>
+            <div class="item-lila">
+                <p><strong>Fase 2:</strong> ¿Por qué los electrones necesitan energía? Porque los átomos los mantienen atrapados. El voltaje es el empujón.</p>
             </div>
             <div class="item-lila">
-                <p><strong>Fase 5: El Bombillo</strong></p>
-                <p>Enciende igual en ambos sentidos porque el brillo depende de la fricción de los electrones.</p>
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_flujo_electrico_circuito_bombillo/s1600/circuito-bombillo.png" alt="Flujo en bombillo">
+                <p><strong>Fase 3: Cargador de Celular</strong> - Reduce voltaje (110V a 5V), convierte AC a DC y genera calor por el Efecto Joule.</p>
             </div>
         </div>
     </article>
 </div>
 
 <footer>
-    <p style="text-align: center; color: #888; padding: 20px;">&copy; 2026 - Taller Educativo ♥</p>
+    <p style="text-align: center; color: #888; padding: 40px;">&copy; 2026 - Educación y Ciencia ♥</p>
 </footer>
 
 </body>
