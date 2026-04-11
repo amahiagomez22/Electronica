@@ -72,8 +72,8 @@
         .seccion-lila { background: white; padding: 30px; border-radius: 15px; margin-bottom: 50px; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
         .header-lila { background-color: var(--dark-lila); color: white; padding: 2rem; text-align: center; border-radius: 15px; margin-bottom: 30px; }
         .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 20px 0; margin-bottom: 20px; }
+        .lila-bloque:last-child { border-bottom: none; }
         .item-lila { background: #faf9ff; padding: 20px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 20px; }
-        .pregunta-fase { color: var(--dark-lila); font-weight: bold; margin-top: 20px; display: block; }
         
         img { max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0; border: 1px solid #eee; }
     </style>
@@ -113,7 +113,7 @@
 
         <section class="rosa-card">
             <h2>2. Ley de Watt</h2>
-            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo.</p>
+            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos o tus servidores.</p>
             <div class="formula">P = V × I</div>
             <ul>
                 <li><strong>P:</strong> Potencia (Vatios o Watts)</li>
@@ -125,7 +125,7 @@
 
         <section class="rosa-card">
             <h2>3. Ley de Joule</h2>
-            <p>Explica por qué los aparatos eléctricos se calientan. La energía 'perdida' se transforma en calor.</p>
+            <p>Explica por qué los aparatos eléctricos se calientan. Cuando la corriente lucha contra la resistencia, esa energía 'perdida' se transforma directamente en <strong>calor</strong>.</p>
             <div class="formula">Q = I² × R × t</div>
             <ul>
                 <li><strong>Q:</strong> Calor (Julios)</li>
@@ -155,83 +155,68 @@
             <div class="item-lila">
                 <strong>1. Electricidad</strong><br>
                 ¿Qué es? Es un conjunto de fenómenos físicos relacionados con la presencia y el flujo de cargas eléctricas.<br>
-                ¿Unidad de medida? Julios (J) o Kilovatios-hora (kWh).<br>
-                ¿Representación? Símbolo de un rayo o diagramas de circuitos.<br>
-                <em>Ejemplo: El encendido de una bombilla al accionar un interruptor.</em>
+                ¿Cuál es su unidad de medida? La energía eléctrica se mide en Julios (J) o, más comúnmente en el recibo de la luz, en Kilovatios-hora (kWh).<br>
+                ¿Tiene símbolo o forma de representación? Se suele representar con el símbolo de un rayo o mediante diagramas de circuitos donde se indica el flujo de energía.<br>
+                <em>Ejemplo en la vida real: El encendido de una bombilla al accionar un interruptor.</em>
             </div>
             <div class="item-lila">
                 <strong>2. Electrón</strong><br>
-                ¿Qué es? Partícula que rodea el núcleo del átomo con carga negativa.<br>
-                ¿Unidad de medida? Coulombs (C).<br>
-                ¿Símbolo? e-<br>
-                <em>Ejemplo: El corrientazo al tocar metal después de caminar con calcetines de lana.</em>
+                ¿Qué es? Es una pequeña partícula que rodea el núcleo del átomo y tiene una carga eléctrica negativa.<br>
+                ¿Cuál es su unidad de medida? Su carga eléctrica se mide en Coulombs (C).<br>
+                ¿Tiene símbolo o forma de representación? Se representa comúnmente con el símbolo e-<br>
+                <em>Ejemplo en la vida real: Los electrones que están en una alfombra provocando un corrientazo al tocar metal.</em>
             </div>
             <div class="item-lila">
-                <strong>3. Movimiento de electrones</strong><br>
-                ¿Qué es? Desplazamiento ordenado a través de un conductor.<br>
-                ¿Unidad de medida? Amperio (A).<br>
-                ¿Símbolo? Letra I.<br>
-                <em>Ejemplo: El flujo de la batería de un celular hacia su pantalla.</em>
+                <strong>3. Movimiento de electrones (Modelo básico)</strong><br>
+                ¿Qué es? Es el desplazamiento ordenado de electrones a través de un material conductor.<br>
+                ¿Cuál es su unidad de medida? Se mide como Intensidad de corriente, y su unidad es el Amperio (A).<br>
+                ¿Tiene símbolo o forma de representación? En física se representa con la letra I.<br>
+                <em>Ejemplo en la vida real: El flujo que viaja desde la batería de un celular hacia la pantalla.</em>
             </div>
         </div>
 
         <div class="lila-bloque">
             <h2>Bloque 2: Flujo Eléctrico</h2>
             <div class="item-lila">
-                <strong>1. Sentido Real:</strong> Dirección física verdadera del terminal (-) al (+).
+                <strong>1. Sentido Real:</strong> Es la dirección física y verdadera en la que se desplazan los electrones (del terminal negativo al positivo).
             </div>
             <div class="item-lila">
-                <strong>2. Sentido Convencional:</strong> Convención histórica del (+) al (-). Se representa con la letra I.
+                <strong>2. Sentido Convencional:</strong> Es una convención histórica (del terminal positivo al negativo). Se representa con la letra I.
             </div>
         </div>
 
         <div class="lila-bloque">
             <h2>Bloque 3: Circuitos</h2>
-            <p><strong>Ánodo:</strong> Electrodo donde la corriente entra. Asociado al Voltaje (V), símbolo A.</p>
-            <p><strong>Cátodo:</strong> Electrodo donde la corriente sale. Símbolo C.</p>
-            <p><strong>Fuente de alimentación:</strong> Suministra energía (Voltaje y Amperios).</p>
-            <p><strong>Receptor:</strong> Consume energía (Ohmios Ω y Vatios W). Ejemplo: bombilla LED, motor.</p>
-            <p><strong>Circuito eléctrico:</strong> Camino cerrado formado por conductores y componentes.</p>
+            <p><strong>Ánodo:</strong> Electrodo por donde la corriente entra. Asociado con el Voltaje (V), abreviado con la letra A.</p>
+            <p><strong>Cátodo:</strong> Electrodo por donde la corriente sale. Símbolo C.</p>
+            <p><strong>Fuente de alimentación:</strong> Encargada de suministrar energía eléctrica (Voltaje y Amperios).</p>
+            <p><strong>Receptor o carga:</strong> Elemento que consume energía para transformarla (Bombilla LED, motor). Se mide en Ohmios Ω y Vatios W.</p>
+            <p><strong>Circuito eléctrico:</strong> Camino cerrado por el cual circula la corriente.</p>
         </div>
 
         <div class="lila-bloque">
             <h2>Bloque 4: Comprensión Conceptual</h2>
             <div class="item-lila">
-                <strong>Electricidad:</strong> Aprovecha el flujo para transportar energía en grandes cantidades (V, A, kWh).
+                <strong>1. Electricidad:</strong> Fenómeno físico que transporta y transforma energía en grandes cantidades (V, A, kWh).
             </div>
             <div class="item-lila">
-                <strong>Electrónica:</strong> Manipula el flujo con precisión para procesar información (mA, mV, Hz).
+                <strong>2. Electrónica:</strong> Rama que manipula y controla el flujo de electrones con precisión para procesar información (mA, mV, Hz).
             </div>
         </div>
 
         <div class="lila-bloque">
             <h2>Bloque 5: Magnitudes Eléctricas</h2>
-            <p><strong>Carga eléctrica:</strong> Propiedad de partículas (Coulomb C), símbolo Q.</p>
-            <p><strong>Corriente (Intensidad):</strong> Flujo por unidad de tiempo (Amperio A), símbolo I.</p>
-            <p><strong>Voltaje (Tensión):</strong> Diferencia de potencial (Voltio V), símbolo V.</p>
-            <p><strong>Resistencia:</strong> Oposición al paso (Ohmio Ω), símbolo R.</p>
-            <p><strong>Potencia:</strong> Proporción de energía transferida (Vatio W), símbolo P.</p>
-        </div>
-
-        <div class="lila-bloque">
-            <h2>Fases de Análisis</h2>
-            <span class="pregunta-fase">Fase 2: ¿Por qué los electrones necesitan energía para moverse?</span>
-            <p>Porque los átomos los mantienen atrapados. El voltaje es el empujón que los obliga a avanzar.</p>
-            
-            <span class="pregunta-fase">Fase 3: Situación Cargador de Celular</span>
-            <p>El cargador reduce el voltaje (110V a 5V) y convierte AC a DC. Ocurre calentamiento por Efecto Joule debido a la resistencia de los componentes.</p>
-
-            <span class="pregunta-fase">Fase 4: Analogía Hidráulica</span>
-            <p>Voltaje = Altura del tanque. Corriente = Caudal de agua. Resistencia = Boquilla o filtro.</p>
-
-            <span class="pregunta-fase">Fase 5: El Bombillo</span>
-            <p>Enciende igual en ambos sentidos porque el brillo depende de los choques (fricción) de electrones en el filamento.</p>
+            <p><strong>Carga eléctrica (Q):</strong> Propiedad de partículas subatómicas medida en Coulombs (C).</p>
+            <p><strong>Corriente (I):</strong> Flujo de electrones por unidad de tiempo medido en Amperios (A).</p>
+            <p><strong>Voltaje (V):</strong> Diferencia de potencial medida en Voltios (V).</p>
+            <p><strong>Resistencia (R):</strong> Oposición al paso de la corriente medida en Ohmios (Ω).</p>
+            <p><strong>Potencia (P):</strong> Proporción de energía transferida medida en Vatios (W).</p>
         </div>
     </article>
 </div>
 
 <footer>
-    <p style="text-align: center; padding: 20px; color: #888;">&copy; 2026 - Taller de Investigación Eléctrica ♥</p>
+    <p style="text-align: center; padding: 40px; color: #888;">&copy; 2026 - Educación y Ciencia ♥</p>
 </footer>
 
 </body>
