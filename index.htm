@@ -9,11 +9,9 @@
             --rosa-principal: #ffb6c1; 
             --rosa-oscuro: #ff69b4;   
             --rosa-pastel: #fff0f5;    
-            --borde-rosa: #ff85a2;
             --primary-lila: #e0d1ff;
             --medium-lila: #b79ced;
             --dark-lila: #6a4c93;
-            --accent-violet: #482d70;
             --bg-general: #fdfbff;
             --texto-oscuro: #4a4a4a;
             --blanco: #ffffff;
@@ -25,36 +23,30 @@
             color: var(--texto-oscuro);
             line-height: 1.6;
             margin: 0;
-            padding: 0;
         }
 
         /* BOTÓN VOLVER */
-        .area-boton-principal {
-            padding: 40px 0 20px 0;
-            display: flex;
-            justify-content: center;
-        }
+        .area-boton-principal { padding: 40px 0 20px 0; display: flex; justify-content: center; }
         .boton-corazon {
             position: relative; width: 60px; height: 60px;
-            background-color: #ff69b4 !important; transform: rotate(-45deg);
+            background-color: var(--rosa-oscuro) !important; transform: rotate(-45deg);
             display: flex; justify-content: center; align-items: center; text-decoration: none;
         }
         .boton-corazon::before, .boton-corazon::after {
             content: ""; position: absolute; width: 60px; height: 60px;
-            background-color: #ff69b4 !important; border-radius: 50%;
+            background-color: var(--rosa-oscuro) !important; border-radius: 50%;
         }
         .boton-corazon::before { top: -30px; left: 0; }
         .boton-corazon::after { top: 0; left: 30px; }
-        .texto-boton { transform: rotate(45deg); color: white !important; font-weight: bold; font-size: 12px; z-index: 100; font-family: sans-serif; }
+        .texto-boton { transform: rotate(45deg); color: white !important; font-weight: bold; font-size: 12px; z-index: 100; }
 
-        /* ÍNDICE */
         nav.indice {
             background: white; position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: center; gap: 15px; padding: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        nav.indice a { text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 25px; transition: 0.3s; font-size: 0.9rem; }
-        .btn-rosa { background: var(--rosa-principal); color: var(--blanco); }
+        nav.indice a { text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; }
+        .btn-rosa { background: var(--rosa-principal); color: white; }
         .btn-lila { background: var(--primary-lila); color: var(--dark-lila); }
 
         .container { max-width: 900px; margin: 20px auto; padding: 20px; }
@@ -71,7 +63,7 @@
         /* SECCIÓN LILA */
         .seccion-lila { background: white; padding: 30px; border-radius: 15px; margin-bottom: 50px; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
         .header-lila { background-color: var(--dark-lila); color: white; padding: 2rem; text-align: center; border-radius: 15px; margin-bottom: 30px; }
-        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 20px 0; margin-bottom: 20px; }
+        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 25px 0; margin-bottom: 20px; }
         .lila-bloque:last-child { border-bottom: none; }
         .item-lila { background: #faf9ff; padding: 20px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 20px; }
         
@@ -101,112 +93,135 @@
 
         <section class="rosa-card">
             <h2>1. Ley de Ohm</h2>
-            <p>Es la columna vertebral de la electrónica. Describe cómo el 'empuje' eléctrico (Voltaje) se relaciona con el flujo de energía (Corriente) y los obstáculos que encuentra (Resistencia).</p>
+            <p>Describe cómo el Voltaje se relaciona con la Corriente y la Resistencia.</p>
             <div class="formula">V = I × R</div>
-            <ul>
-                <li><strong>V:</strong> Voltaje (se mide en Voltios)</li>
-                <li><strong>I:</strong> Corriente (se mide en Amperios)</li>
-                <li><strong>R:</strong> Resistencia (se mide en Ohmios)</li>
-            </ul>
             <img src="https://grupopc.com/wp-content/uploads/2024/07/Ley-Ohm.jpg" alt="Ley de Ohm">
         </section>
 
         <section class="rosa-card">
             <h2>2. Ley de Watt</h2>
-            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo.</p>
+            <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos o tus servidores.</p>
             <div class="formula">P = V × I</div>
             <ul>
-                <li><strong>P:</strong> Potencia (Vatios o Watts)</li>
-                <li><strong>V:</strong> Voltaje (Voltios)</li>
-                <li><strong>I:</strong> Corriente (Amperios)</li>
+                <li><strong>♥ P:</strong> Potencia (Vatios o Watts)</li>
+                <li><strong>♥ V:</strong> Voltaje (Voltios)</li>
+                <li><strong>♥ I:</strong> Corriente (Amperios)</li>
             </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ohms_Law_Wheel.svg/1024px-Ohms_Law_Wheel.svg.png" alt="Ley de Watt">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ohms_Law_Wheel.svg/1024px-Ohms_Law_Wheel.svg.png" alt="Rueda de Watt y Ohm">
         </section>
 
         <section class="rosa-card">
             <h2>3. Ley de Joule</h2>
-            <p>Explica por qué los aparatos eléctricos se calientan. Cuando la corriente lucha contra la resistencia, esa energía se transforma en <strong>calor</strong>.</p>
+            <p>Explica por qué los aparatos eléctricos se calientan. Cuando la corriente lucha contra la resistencia, esa energía 'perdida' se transforma directamente en <strong>calor</strong>.</p>
             <div class="formula">Q = I² × R × t</div>
-            <ul>
-                <li><strong>Q:</strong> Calor (Julios)</li>
-                <li><strong>I:</strong> Corriente (Amperios)</li>
-                <li><strong>R:</strong> Resistencia (Ohmios)</li>
-                <li><strong>t:</strong> Tiempo (Segundos)</li>
-            </ul>
             <img src="https://www.lifeder.com/wp-content/uploads/2019/10/efecto-Joule-1.jpg" alt="Ley de Joule">
-        </section>
-
-        <section class="rosa-card">
-            <h2>Video de Apoyo</h2>
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; border: 3px solid var(--rosa-principal);">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JOtvbWTdD3U?si=QvfFPp5tiS90JRJG" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-            </div>
         </section>
     </article>
 
     <article id="taller-lila" class="seccion-lila">
         <header class="header-lila">
             <h1>Taller de Investigación</h1>
-            <p>Fases de Análisis y Fundamentos</p>
-        </header>
+    <p>Fundamentos de Electricidad y Electrónica</p>
+</header>
 
-        <div class="lila-bloque">
-            <h2>Bloque 1: Fundamentos</h2>
-            <div class="item-lila">
-                <strong>1. Electricidad:</strong> Fenómenos físicos con flujo de cargas. Se mide en Julios (J) o kWh. Símbolo del rayo.<br>
-                <em>Ejemplo: El encendido de una bombilla.</em>
-            </div>
-            <div class="item-lila">
-                <strong>2. Electrón:</strong> Partícula con carga negativa (-). Se mide en Coulombs (C). Símbolo e-.<br>
-                <em>Ejemplo: Estática al tocar una alfombra.</em>
-            </div>
-            <div class="item-lila">
-                <strong>3. Movimiento de electrones:</strong> Desplazamiento ordenado. Se mide en Amperios (A). Símbolo I.<br>
-                <em>Ejemplo: Flujo de la batería a la pantalla del móvil.</em>
-            </div>
+<div class="container">
+
+    <section class="phase-section">
+        <h2>Fase 1: Conceptos Fundamentales</h2>
+        
+        <h3>Bloque 1: Fundamentos</h3>
+        <div class="block-card">
+            <span class="concept-title">1. Electricidad</span>
+            <div class="item-detail"><span class="label">¿Qué es?</span> Conjunto de fenómenos físicos relacionados con la presencia y el flujo de cargas eléctricas.</div>
+            <div class="item-detail"><span class="label">Unidad de medida:</span> Julios (J) o Kilovatios-hora (kWh).</div>
+            <div class="item-detail"><span class="label">Representación:</span> Símbolo de un rayo o diagramas de circuitos.</div>
+            <div class="example-box">Ejemplo: Encendido de una bombilla al accionar un interruptor.</div>
         </div>
 
-        <div class="lila-bloque">
-            <h2>Bloque 2: Flujo y Energía</h2>
-            <div class="item-lila">
-                <strong>Sentido Real:</strong> Del terminal (-) al (+). <strong>Sentido Convencional:</strong> Del (+) al (-).
-            </div>
-            <div class="item-lila">
-                <strong>Fase 2: ¿Por qué necesitan energía?</strong> Los átomos los mantienen atrapados. El voltaje es el empujón necesario para obligarlos a avanzar.
-            </div>
+        <div class="block-card">
+            <span class="concept-title">2. Electrón</span>
+            <div class="item-detail"><span class="label">¿Qué es?</span> Partícula con carga negativa que rodea el núcleo del átomo.</div>
+            <div class="item-detail"><span class="label">Unidad de medida:</span> Coulombs (C).</div>
+            <div class="item-detail"><span class="label">Símbolo:</span> e-</div>
+            <div class="example-box">Ejemplo: Electricidad estática al caminar con calcetines de lana sobre una alfombra.</div>
         </div>
 
-        <div class="lila-bloque">
-            <h2>Bloque 3: Circuitos</h2>
-            <div class="item-lila">
-                <p><strong>Ánodo:</strong> Entrada de corriente (+). <strong>Cátodo:</strong> Salida de corriente (-).</p>
-                <p><strong>Fuente:</strong> Suministra energía. <strong>Receptor:</strong> La consume (Bombilla, motor).</p>
-                <p><strong>Fase 3: Cargador de Celular:</strong> Reduce voltaje (110V a 5V), pasa de AC a DC y genera calor por Efecto Joule.</p>
-            </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisPqGfE8V2x2qL6R8n9h4Jk7H9k3X4c2V9b8n7m6l5k4j3h2g1f0d9s8a7z6x5c4v3b2n1m/s1600/electrical-circuit-components-and-their-symbols.jpg" alt="Símbolos Eléctricos">
+        <div class="block-card">
+            <span class="concept-title">3. Movimiento de electrones</span>
+            <div class="item-detail"><span class="label">¿Qué es?</span> Desplazamiento ordenado de electrones a través de un conductor.</div>
+            <div class="item-detail"><span class="label">Unidad de medida:</span> Amperio (A).</div>
+            <div class="item-detail"><span class="label">Símbolo:</span> I (Intensidad).</div>
+            <div class="example-box">Ejemplo: Energía que viaja de la batería de un celular hacia su procesador.</div>
         </div>
 
-        <div class="lila-bloque">
-            <h2>Bloque 4: Comprensión y Analogía</h2>
-            <div class="item-lila">
-                <strong>Electricidad:</strong> Energía a gran escala. <strong>Electrónica:</strong> Control de flujo para información.
-            </div>
-            <div class="item-lila">
-                <strong>Fase 4: Analogía Hidráulica:</strong><br>
-                Voltaje = Presión/Altura del agua. Corriente = Caudal. Resistencia = Boquilla o filtro.
-            </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Z4_u2q9R9X_z8J_f1h2k3l4m5n6o7p8q9r0s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5h6i7j8k9l0/s1600/analogia-hidraulica.jpg" alt="Analogía Hidráulica">
+        <h3>Bloque 2: Flujo Eléctrico</h3>
+        <div class="block-card">
+            <span class="concept-title">Sentido Real vs. Convencional</span>
+            <p><span class="label">Real:</span> Del terminal (-) al (+). Es el movimiento físico real.</p>
+            <p><span class="label">Convencional:</span> Del terminal (+) al (-). Es la norma técnica usada en libros y diagramas.</p>
         </div>
 
-        <div class="lila-bloque">
-            <h2>Bloque 5: Magnitudes y Fase 5</h2>
-            <p><strong>Magnitudes:</strong> Carga (Q), Corriente (I), Voltaje (V), Resistencia (R), Potencia (P).</p>
-            <div class="item-lila">
-                <strong>Fase 5: El Bombillo:</strong> Enciende igual en ambos sentidos porque el brillo depende de la fricción (choques) de los electrones en el filamento.
-            </div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_flujo_electrico_circuito_bombillo/s1600/circuito-bombillo.png" alt="Flujo Eléctrico Bombillo">
+        <h3>Bloque 3: Circuitos</h3>
+        <div class="block-card">
+            <p><span class="label">Ánodo:</span> Electrodo de entrada de corriente (Oxidación). Símbolo: <strong>A</strong>.</p>
+            <p><span class="label">Cátodo:</span> Electrodo de salida de corriente. Símbolo: <strong>C</strong>.</p>
+            <p><span class="label">Fuente:</span> Suministra energía (Baterías, adaptadores). Medida en Voltios (V).</p>
+            <p><span class="label">Receptor:</span> Consume energía (Bombillas, motores). Medida en Ohmios (Ω) y Vatios (W).</p>
         </div>
-    </article>
+        
+        <h3>Bloque 4 y 5: Magnitudes</h3>
+        <div class="block-card">
+            <p><span class="label">Voltaje (V):</span> La fuerza o empuje (Presión eléctrica).</p>
+            <p><span class="label">Resistencia (R):</span> Oposición al paso de la corriente (Ohmios Ω).</p>
+            <p><span class="label">Potencia (P):</span> Rapidez con la que se consume energía (Vatios W).</p>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 2: Análisis Conceptual</h2>
+        <div class="item-detail"><strong>¿Por qué se mueven los electrones?</strong> Necesitan el "empujón" del voltaje para vencer la atracción del átomo.</div>
+        <div class="item-detail"><strong>¿Resistencia cero?</strong> Provocaría un cortocircuito, elevando la corriente hasta derretir los conductores.</div>
+        <div class="item-detail"><strong>Cobre vs Plástico:</strong> El cobre es una "autopista" (conductor) y el plástico es un "muro" (aislante).</div>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 3: Situación Problema (Cargador de Celular)</h2>
+        <p>En un cargador, el <strong>voltaje</strong> cambia de 110V a 5V para proteger los circuitos delicados del móvil.</p>
+        <ul>
+            <li><strong>Resistencia:</strong> Se encuentra en el cable de cobre y los componentes internos.</li>
+            <li><strong>Calentamiento:</strong> El calor que sientes es el <em>Efecto Joule</em>; energía perdida por la resistencia.</li>
+            <li><strong>Ambas ramas:</strong> Es <strong>Electricidad</strong> (transporte de fuerza) y <strong>Electrónica</strong> (control preciso de datos y carga).</li>
+        </ul>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 4: Analogía Hidráulica</h2>
+        <div class="analogia-container">
+            <div class="analogia-card">
+                <strong>El Voltaje</strong>
+                <p>Es la altura del tanque de agua. A más altura, más presión para bajar.</p>
+            </div>
+            <div class="analogia-card">
+                <strong>La Corriente</strong>
+                <p>Es el caudal. Qué tanta agua sale por segundo por la manguera.</p>
+            </div>
+            <div class="analogia-card">
+                <strong>La Resistencia</strong>
+                <p>Es la boquilla o un filtro de arena que frena el paso del agua.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 5: Conclusiones del Experimento</h2>
+        <div class="block-card">
+            <span class="label">El Bombillo:</span> Enciende igual en ambos sentidos porque el brillo depende del choque de electrones (fricción), sin importar hacia dónde caminen.
+        </div>
+        <div class="block-card">
+            <span class="label">Polos:</span> El <strong>Polo (+)</strong> es la salida con máxima energía, y el <strong>Polo (-)</strong> es el regreso tras haber entregado la energía al receptor.
+        </div>
+    </section>
+
 </div>
 
 <footer>
