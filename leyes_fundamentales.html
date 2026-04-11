@@ -22,23 +22,24 @@
             margin: 0;
             padding: 20px;
         }
-
+        
         .area-boton {
-            padding: 40px;
-            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
         }
-
+        
         .boton-corazon {
             position: relative;
             width: 60px;
             height: 60px;
-            background-color: #ff69b4 !important;
+            background-color: #ff69b4 !important; 
             transform: rotate(-45deg);
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            margin-left: 20px;
+            margin: 40px auto; 
+            transition: transform 0.3s;
         }
 
         .boton-corazon::before,
@@ -62,15 +63,14 @@
         }
 
         .texto-boton {
-            transform: rotate(45deg);
+            transform: rotate(45deg); 
             color: white !important;
             font-weight: bold;
             font-size: 12px;
-            z-index: 100;
-            text-decoration: none;
-            font-family: sans-serif;
+            z-index: 10;
+            position: relative;
         }
-
+        
         header {
             text-align: center;
             padding: 50px 0;
@@ -158,11 +158,11 @@
 <body>
 
     <div class="area-boton">
-        <a href="https://amahiagomez22.github.io/Electronica/">
-            <span class="texto-boton">VOLVER</span>
-        </a>
+    <a href="index.html" class="boton-corazon">
+        <span class="texto-boton">VOLVER</span>
+    </a>
     </div>
-
+    
     <header>
         <h1>Principios de Electricidad</h1>
         <p>Por: Amahia Gomez ♥</p>
