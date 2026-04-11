@@ -3,187 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio: Electricidad y Electrónica</title>
+    <title>Portafolio de Electricidad - Amahia Gomez</title>
     <style>
+        /* ESTILOS DE NAVEGACIÓN (ÍNDICE) */
         :root {
-            /* Paleta Rosa */
+            --primary-lila: #e0d1ff;
+            --dark-lila: #6a4c93;
             --rosa-principal: #ffb6c1;
             --rosa-oscuro: #ff69b4;
-            --rosa-pastel: #fff0f5;
-            /* Paleta Lila */
-            --primary-lila: #e0d1ff;
-            --medium-lila: #b79ced;
-            --dark-lila: #6a4c93;
-            /* Generales */
-            --bg-general: #fdfbff;
-            --texto-oscuro: #4a4a4a;
-            --blanco: #ffffff;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-general);
-            color: var(--texto-oscuro);
-            scroll-behavior: smooth;
-        }
-
-        /* MENÚ DE NAVEGACIÓN (ÍNDICE) */
-        nav.menu-global {
-            background: white;
-            position: sticky;
+        
+        nav.indice-fijo {
+            position: fixed;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            width: 100%;
+            background: white;
+            z-index: 9999;
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 15px;
+            padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        nav.menu-global a {
+        .btn-nav {
             text-decoration: none;
             font-weight: bold;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: sans-serif;
+            font-size: 14px;
             transition: 0.3s;
-            font-size: 0.95rem;
         }
 
-        .link-rosa { background: var(--rosa-principal); color: white; }
-        .link-rosa:hover { background: var(--rosa-oscuro); }
-        .link-lila { background: var(--primary-lila); color: var(--dark-lila); }
-        .link-lila:hover { background: var(--medium-lila); }
+        .btn-rosa { background: var(--rosa-principal); color: white; }
+        .btn-lila { background: var(--primary-lila); color: var(--dark-lila); }
+        
+        .spacer { height: 70px; } /* Espacio para que el índice no tape el contenido */
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        /* -------------------------------------------------- */
+        /* CÓDIGO 1: ESTILOS LEYES FUNDAMENTALES (ROSA)       */
+        /* -------------------------------------------------- */
+        .seccion-rosa-total {
+            background-color: #fff0f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+        .area-boton { padding: 40px; width: 100%; }
+        .boton-corazon {
+            position: relative; width: 60px; height: 60px;
+            background-color: #ff69b4 !important; transform: rotate(-45deg);
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; margin-left: 20px;
+        }
+        .boton-corazon::before, .boton-corazon::after {
+            content: ""; position: absolute; width: 60px; height: 60px;
+            background-color: #ff69b4 !important; border-radius: 50%;
+        }
+        .boton-corazon::before { top: -30px; left: 0; }
+        .boton-corazon::after { top: 0; left: 30px; }
+        .texto-boton { transform: rotate(45deg); color: white !important; font-weight: bold; font-size: 12px; z-index: 100; font-family: sans-serif; }
+        
+        .header-rosa { text-align: center; padding: 50px 0; background: #ffb6c1; color: white; border-radius: 15px; margin-bottom: 30px; }
+        .section-rosa { background: white; padding: 30px; margin-bottom: 25px; border-radius: 15px; border: 1px solid #ffebee; }
+        .formula-rosa { background: #fff0f5; color: #ff69b4; padding: 20px; border-left: 6px solid #ff69b4; border-radius: 8px; font-weight: bold; font-size: 1.4em; text-align: center; font-family: 'Courier New', monospace; }
+        .lista-rosa { list-style-type: none; padding-left: 0; }
+        .lista-rosa li { margin-bottom: 10px; position: relative; padding-left: 25px; }
+        .lista-rosa li::before { content: '♥'; color: #ff69b4; position: absolute; left: 0; }
 
-        /* ESTILOS SECCIÓN ROSA */
-        .seccion-rosa {
-            background-color: var(--rosa-pastel);
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 50px;
-            border: 2px solid var(--rosa-principal);
+        /* -------------------------------------------------- */
+        /* CÓDIGO 2: ESTILOS TALLER DE INVESTIGACIÓN (LILA)    */
+        /* -------------------------------------------------- */
+        .seccion-lila-total {
+            background-color: #fdfbff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a4a4a;
+            padding: 20px;
         }
-        .header-rosa { text-align: center; color: var(--rosa-oscuro); margin-bottom: 30px; }
-        .card-rosa {
-            background: white; padding: 25px; border-radius: 15px; margin-bottom: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .formula {
-            background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 15px;
-            border-left: 5px solid var(--rosa-oscuro); border-radius: 8px;
-            text-align: center; font-family: monospace; font-size: 1.3rem; margin: 15px 0;
-        }
-
-        /* ESTILOS SECCIÓN LILA */
-        .seccion-lila {
-            background-color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 80px;
-            border: 1px solid var(--primary-lila);
-            box-shadow: 0 10px 30px rgba(106, 76, 147, 0.1);
-        }
-        .header-lila {
-            background-color: var(--dark-lila); color: white; padding: 2rem;
-            text-align: center; border-radius: 15px; margin-bottom: 40px;
-        }
-        .fase-box {
-            background: #faf9ff; border: 1px solid var(--primary-lila);
-            padding: 20px; border-radius: 12px; margin-bottom: 20px;
-        }
-        .label-lila { color: var(--dark-lila); font-weight: bold; }
-
-        img { max-width: 100%; border-radius: 10px; display: block; margin: 20px auto; }
-        .btn-top { text-align: center; margin-top: 20px; }
+        .container-lila { max-width: 1000px; margin: 40px auto; }
+        .header-lila { background-color: #6a4c93; color: white; padding: 3rem; text-align: center; border-radius: 20px; margin-bottom: 40px; }
+        .phase-section { background: white; padding: 30px; border-radius: 15px; margin-bottom: 40px; border: 1px solid #e0d1ff; }
+        .block-card { background: #faf9ff; padding: 20px; border-radius: 12px; border: 1px solid #e0d1ff; margin-bottom: 20px; }
+        .concept-title { color: #6a4c93; font-weight: bold; font-size: 1.2rem; display: block; margin-bottom: 10px; }
+        .label-lila { font-weight: bold; color: #6a4c93; }
+        .example-box { background: #e0d1ff; padding: 12px; border-radius: 8px; margin-top: 15px; font-style: italic; color: #6a4c93; }
+        .analogia-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .analogia-card { background: #e0d1ff; padding: 20px; border-radius: 12px; color: #6a4c93; border: 1px solid #b79ced; }
+        .img-container { text-align: center; margin: 20px 0; }
+        .img-container img { max-width: 100%; border-radius: 10px; }
     </style>
 </head>
 <body>
 
-<nav class="menu-global">
-    <a href="#leyes-fundamentales" class="link-rosa">1. Leyes Fundamentales (Rosa)</a>
-    <a href="#taller-investigacion" class="link-lila">2. Taller de Investigación (Lila)</a>
+<nav class="indice-fijo">
+    <a href="#seccion1" class="btn-nav btn-rosa">1. Leyes Fundamentales (Rosa)</a>
+    <a href="#seccion2" class="btn-nav btn-lila">2. Taller de Investigación (Lila)</a>
 </nav>
 
-<div class="container">
+<div class="spacer"></div>
 
-    <article id="leyes-fundamentales" class="seccion-rosa">
-        <header class="header-rosa">
-            <h1>Principios de Electricidad</h1>
-            <p>Por: Amahia Gomez ♥</p>
-        </header>
-
-        <section class="card-rosa">
-            <h2>Ley de Ohm</h2>
-            <p>Relación entre Voltaje, Corriente y Resistencia.</p>
-            <div class="formula">V = I × R</div>
-            <img src="https://grupopc.com/wp-content/uploads/2024/07/Ley-Ohm.jpg" alt="Ohm">
-        </section>
-
-        <section class="card-rosa">
-            <h2>Ley de Watt</h2>
-            <p>Define la Potencia Eléctrica (Energía por segundo).</p>
-            <div class="formula">P = V × I</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ohms_Law_Wheel.svg/1024px-Ohms_Law_Wheel.svg.png" alt="Watt">
-        </section>
-
-        <section class="card-rosa">
-            <h2>Ley de Joule</h2>
-            <p>Calor generado por la resistencia eléctrica.</p>
-            <div class="formula">Q = I² × R × t</div>
-            <img src="https://www.lifeder.com/wp-content/uploads/2019/10/efecto-Joule-1.jpg" alt="Joule">
-        </section>
-    </article>
-
-    <div class="btn-top">
-        <a href="#leyes-fundamentales" style="color: var(--rosa-oscuro); text-decoration: none;">↑ Volver arriba</a>
+<div id="seccion1" class="seccion-rosa-total">
+    <div class="area-boton">
+        <a href="https://jarudev.github.io/itcts4z/" class="boton-corazon">
+            <span class="texto-boton">VOLVER</span>
+        </a>
     </div>
+    
+    <header class="header-rosa">
+        <h1>Principios de Electricidad</h1>
+        <p>Por: Amahia Gomez ♥</p>
+    </header>
 
-    <article id="taller-investigacion" class="seccion-lila">
+    <section class="section-rosa">
+        <h2>1. Ley de Ohm</h2>
+        <p>Es la columna vertebral de la electrónica. Describe cómo el 'empuje' eléctrico (Voltaje) se relaciona con el flujo de energía (Corriente) y los obstáculos que encuentra (Resistencia).</p>
+        <div class="formula-rosa">V = I × R</div>
+        <ul class="lista-rosa">
+            <li><strong>V:</strong> Voltaje (se mide en Voltios)</li>
+            <li><strong>I:</strong> Corriente (se mide en Amperios)</li>
+            <li><strong>R:</strong> Resistencia (se mide en Ohmios)</li>
+        </ul>
+        <div class="img-container">
+            <img src="https://grupopc.com/wp-content/uploads/2024/07/Ley-Ohm.jpg" alt="Diagrama de la Ley de Ohm">
+        </div>
+    </section>
+
+    <section class="section-rosa">
+        <h2>2. Ley de Watt</h2>
+        <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos o tus servidores.</p>
+        <div class="formula-rosa">P = V × I</div>
+        <ul class="lista-rosa">
+            <li><strong>P:</strong> Potencia (se mide en Vatios o Watts)</li>
+            <li><strong>V:</strong> Voltaje (se mide en Voltios)</li>
+            <li><strong>I:</strong> Corriente (se mide en Amperios)</li>
+        </ul>
+        <div class="img-container">
+            <img src="https://scontent-bog2-1.xx.fbcdn.net/v/t39.30808-6/482248357_662803926274957_8724187404740685114_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=04wIEl_bpLAQ7kNvwF1Kozw&_nc_oc=AdlMS36ADQC1suuCqYmvFBZvIRW8IjFMT7qy8oisz4buerPx8X67E-zBvQ2re9VY4Qo&_nc_zt=23&_nc_ht=scontent-bog2-1.xx&_nc_gid=zfCXZLHJDi1lwnTzWLVdWA&_nc_ss=8&oh=00_AfxaO5t17i2uPB7bfDqvWX1s6Jl-k0rwA7N5kVkdYDiAEA&oe=69B9ECAA" alt="Diagrama de Potencia">
+        </div>
+    </section>
+
+    <section class="section-rosa">
+        <h2>3. Ley de Joule</h2>
+        <p>Explica por qué los aparatos eléctricos se calientan. Cuando la corriente lucha contra la resistencia, esa energía 'perdida' se transforma directamente en <strong>calor</strong>.</p>
+        <div class="formula-rosa">Q = I² × R × t</div>
+        <ul class="lista-rosa">
+            <li><strong>Q:</strong> Calor/Energía generada (se mide en Julios)</li>
+            <li><strong>I:</strong> Corriente (Amperios)</li>
+            <li><strong>R:</strong> Resistencia (Ohmios)</li>
+            <li><strong>t:</strong> Tiempo (Segundos)</li>
+        </ul>
+        <div class="img-container">
+            <img src="https://www.lifeder.com/wp-content/uploads/2019/10/efecto-Joule-1.jpg" alt="Diagrama de la Ley de Joule">
+        </div>
+    </section>
+
+    <section class="section-rosa">
+        <h2>Video de Apoyo</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; border: 3px solid #ffb6c1;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JOtvbWTdD3U?si=QvfFPp5tiS90JGJG" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+</div>
+
+<div id="seccion2" class="seccion-lila-total">
+    <div class="container-lila">
         <header class="header-lila">
             <h1>Taller de Investigación</h1>
             <p>Fundamentos de Electricidad y Electrónica</p>
         </header>
 
-        <h2 style="color: var(--dark-lila);">Fase 1: Conceptos</h2>
-        <div class="fase-box">
-            <p><span class="label-lila">Electricidad:</span> Flujo de cargas. Medida en Julios (J) o kWh.</p>
-            <p><span class="label-lila">Electrón:</span> Carga negativa (e-). Medida en Coulombs (C).</p>
-            <p><span class="label-lila">Movimiento:</span> Intensidad de corriente (Amperios A).</p>
-        </div>
-
-        <h2 style="color: var(--dark-lila);">Fase 3: El Cargador</h2>
-        <div class="fase-box">
-            <p>Transforma 110V a 5V. El calor que emite se debe al <strong>Efecto Joule</strong>.</p>
-        </div>
-
-        <h2 style="color: var(--dark-lila);">Fase 4: Analogía Hidráulica</h2>
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <div style="flex: 1; background: var(--primary-lila); padding: 15px; border-radius: 10px;">
-                <strong>Voltaje:</strong> Presión/Altura del agua.
+        <section class="phase-section">
+            <h2>Fase 1: Conceptos Fundamentales</h2>
+            <h3>Bloque 1: Fundamentos</h3>
+            <div class="block-card">
+                <span class="concept-title">1. Electricidad</span>
+                <p><span class="label-lila">¿Qué es?</span> Conjunto de fenómenos físicos relacionados con la presencia y el flujo de cargas eléctricas.</p>
+                <p><span class="label-lila">Unidad de medida:</span> Julios (J) o Kilovatios-hora (kWh).</p>
+                <p><span class="label-lila">Representación:</span> Símbolo de un rayo o diagramas de circuitos.</p>
+                <div class="example-box">Ejemplo: El encendido de una bombilla al accionar un interruptor.</div>
             </div>
-            <div style="flex: 1; background: var(--primary-lila); padding: 15px; border-radius: 10px;">
-                <strong>Corriente:</strong> Caudal de la manguera.
-            </div>
-            <div style="flex: 1; background: var(--primary-lila); padding: 15px; border-radius: 10px;">
-                <strong>Resistencia:</strong> Filtro o boquilla estrecha.
-            </div>
-        </div>
 
-        <h2 style="color: var(--dark-lila);">Fase 5: Conclusiones</h2>
-        <div class="fase-box">
-            <p><strong>El Bombillo:</strong> Enciende igual en ambos sentidos por la fricción de los electrones.</p>
-            <p><strong>Polos:</strong> El (+) es energía máxima y el (-) es el retorno tras el trabajo.</p>
-            <img src="https://www.asifunciona.com/electrotecnia/af_circuito/af_circuito_2.gif" alt="Flujo">
-        </div>
-    </article>
+            <div class="block-card">
+                <span class="concept-title">2. Electrón</span>
+                <p><span class="label-lila">¿Qué es?</span> Partícula con carga negativa que rodea el núcleo del átomo.</p>
+                <p><span class="label-lila">Unidad de medida:</span> Coulombs (C).</p>
+                <p><span class="label-lila">Símbolo:</span> e-.</p>
+                <div class="example-box">Ejemplo: Electricidad estática al tocar una alfombra con calcetines de lana.</div>
+            </div>
 
+            <h3>Bloque 2: Flujo Eléctrico</h3>
+            <div class="block-card">
+                <span class="concept-title">Sentido Real vs. Convencional</span>
+                <p><span class="label-lila">Real:</span> Del terminal (-) al (+). Movimiento físico real.</p>
+                <p><span class="label-lila">Convencional:</span> Del terminal (+) al (-). Norma técnica usada en diagramas.</p>
+            </div>
+
+            <h3>Bloque 3: Circuitos</h3>
+            <div class="block-card">
+                <p><span class="label-lila">Ánodo (A):</span> Electrodo de entrada de corriente.</p>
+                <p><span class="label-lila">Cátodo (C):</span> Electrodo de salida de corriente.</p>
+                <p><span class="label-lila">Fuente:</span> Suministra energía (Baterías, adaptadores).</p>
+                <p><span class="label-lila">Receptor:</span> Consume energía (Bombillas, motores).</p>
+                <div class="img-container">
+                    <img src="https://static.vecteezy.com/system/resources/previews/004/235/051/non_2x/electrical-circuit-components-and-their-symbols-free-vector.jpg" alt="Símbolos de circuitos">
+                </div>
+            </div>
+        </section>
+
+        <section class="phase-section">
+            <h2>Fase 2: Análisis Conceptual</h2>
+            <div class="block-card">
+                <ul>
+                    <li><strong>¿Por qué se mueven?</strong> El voltaje actúa como un empujón para vencer la atracción del átomo.</li>
+                    <li><strong>¿Resistencia cero?</strong> Provoca un cortocircuito, elevando la corriente hasta derretir conductores.</li>
+                    <li><strong>Materiales:</strong> El cobre es una "autopista" (conductor) y el plástico es un "muro" (aislante).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="phase-section">
+            <h2>Fase 3: Situación Problema (Cargador)</h2>
+            <div class="block-card">
+                <p>En un cargador, el <strong>voltaje</strong> cambia de 110V a 5V para proteger los circuitos internos.</p>
+                <ul>
+                    <li><strong>Resistencia:</strong> Se encuentra en el cable de cobre y componentes internos.</li>
+                    <li><strong>Efecto Joule:</strong> El calentamiento es energía eléctrica transformándose en térmica.</li>
+                    <li><strong>Dualidad:</strong> Usa Electricidad (transporte) y Electrónica (control preciso).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="phase-section">
+            <h2>Fase 4: Analogía Hidráulica</h2>
+            <div class="analogia-grid">
+                <div class="analogia-card"><strong>El Voltaje:</strong> Altura del tanque (Presión).</div>
+                <div class="analogia-card"><strong>La Corriente:</strong> Caudal de la manguera.</div>
+                <div class="analogia-card"><strong>La Resistencia:</strong> Filtro o boquilla estrecha.</div>
+            </div>
+        </section>
+
+        <section class="phase-section">
+            <h2>Fase 5: Conclusiones</h2>
+            <div class="block-card">
+                <p><strong>El Bombillo:</strong> Enciende igual en ambos sentidos porque el brillo depende de los choques de electrones.</p>
+                <p><strong>Polos:</strong> El Polo (+) es la salida con máxima energía; el Polo (-) es el regreso tras el trabajo.</p>
+                <div class="img-container">
+                    <img src="https://www.asifunciona.com/electrotecnia/af_circuito/af_circuito_2.gif" alt="Flujo de energía">
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
 
-<footer style="text-align: center; padding: 60px; color: #999;">
-    <p>Amahia Gomez - 2026 ♥</p>
+<footer style="text-align: center; padding: 40px; background: #eee; font-family: sans-serif;">
+    <p>&copy; 2026 - Portafolio de Electricidad ♥</p>
 </footer>
 
 </body>
