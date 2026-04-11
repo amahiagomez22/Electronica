@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compendio de Electricidad - Taller y Leyes</title>
+    <title>Compendio de Electricidad</title>
     <style>
-        /* VARIABLES UNIFICADAS */
         :root {
-            /* Colores Lila */
-            --primary-lila: #e0d1ff;
-            --medium-lila: #b79ced;
-            --dark-lila: #6a4c93;
-            --accent-violet: #482d70;
             /* Colores Rosa */
             --rosa-principal: #ffb6c1; 
             --rosa-oscuro: #ff69b4;   
             --rosa-pastel: #fff0f5;    
             --borde-rosa: #ff85a2;
+            /* Colores Lila */
+            --primary-lila: #e0d1ff;
+            --medium-lila: #b79ced;
+            --dark-lila: #6a4c93;
+            --accent-violet: #482d70;
             /* Neutros */
             --bg-general: #fdfbff;
             --texto-oscuro: #4a4a4a;
@@ -32,34 +31,152 @@
             padding: 0;
         }
 
-        /* BOTÓN CORAZÓN (ESTILO ORIGINAL) */
+        /* BOTÓN CORAZÓN */
         .area-boton-principal {
             padding: 40px 0 20px 0;
             display: flex;
             justify-content: center;
-            width: 100%;
         }
-
         .boton-corazon {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            background-color: #ff69b4 !important;
-            transform: rotate(-45deg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
+            position: relative; width: 60px; height: 60px;
+            background-color: #ff69b4 !important; transform: rotate(-45deg);
+            display: flex; justify-content: center; align-items: center; text-decoration: none;
         }
+        .boton-corazon::before, .boton-corazon::after {
+            content: ""; position: absolute; width: 60px; height: 60px;
+            background-color: #ff69b4 !important; border-radius: 50%;
+        }
+        .boton-corazon::before { top: -30px; left: 0; }
+        .boton-corazon::after { top: 0; left: 30px; }
+        .texto-boton { transform: rotate(45deg); color: white !important; font-weight: bold; font-size: 12px; z-index: 100; font-family: sans-serif; }
 
-        .boton-corazon::before,
-        .boton-corazon::after {
-            content: "";
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color:
+        /* ÍNDICE */
+        nav.indice {
+            background: white; position: sticky; top: 0; z-index: 1000;
+            display: flex; justify-content: center; gap: 15px; padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav.indice a { text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 25px; transition: 0.3s; font-size: 0.9rem; }
+        .btn-rosa { background: var(--rosa-principal); color: var(--blanco); }
+        .btn-lila { background: var(--primary-lila); color: var(--dark-lila); }
 
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; }
 
+        /* ESTILOS ROSA */
+        .seccion-rosa { background: var(--rosa-pastel); padding: 30px; border-radius: 15px; margin-bottom: 50px; border: 2px solid var(--rosa-principal); }
+        .header-rosa { text-align: center; padding: 30px; background: var(--rosa-principal); color: white; border-radius: 15px; margin-bottom: 25px; }
+        .rosa-card { background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .formula { background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 15px; border-left: 6px solid var(--rosa-oscuro); border-radius: 8px; font-weight: bold; font-size: 1.4em; text-align: center; margin: 15px 0; font-family: 'Courier New', monospace; }
+        .rosa-card ul { list-style: none; padding-left: 0; }
+        .rosa-card ul li::before { content: '♥ '; color: var(--rosa-oscuro); }
 
+        /* ESTILOS LILA */
+        .seccion-lila { background: white; padding: 30px; border-radius: 15px; margin-bottom: 50px; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
+        .header-lila { background-color: var(--dark-lila); color: white; padding: 2rem; text-align: center; border-radius: 15px; margin-bottom: 30px; }
+        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 20px 0; margin-bottom: 20px; }
+        .lila-bloque:last-child { border-bottom: none; }
+        .label-lila { font-weight: bold; color: var(--dark-lila); }
+        .item-lila { background: #faf9ff; padding: 15px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 10px; }
+
+        img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="area-boton-principal">
+    <a href="https://jarudev.github.io/itcts4z/" class="boton-corazon">
+        <span class="texto-boton">VOLVER</span>
+    </a>
+</div>
+
+<nav class="indice">
+    <a href="#leyes-rosa" class="btn-rosa">1. Leyes Eléctricas (Rosa)</a>
+    <a href="#taller-lila" class="btn-lila">2. Taller de Investigación (Lila)</a>
+</nav>
+
+<div class="container">
+
+    <article id="leyes-rosa" class="seccion-rosa">
+        <header class="header-rosa">
+            <h1>Principios de Electricidad</h1>
+            <p>Por: Amahia Gomez ♥</p>
+        </header>
+
+        <section class="rosa-card">
+            <h2>1. Ley de Ohm</h2>
+            <div class="formula">V = I × R</div>
+            <p>Describe cómo el 'empuje' eléctrico se relaciona con el flujo de energía.</p>
+            <img src="https://grupopc.com/wp-content/uploads/2024/07/Ley-Ohm.jpg" alt="Ohm">
+        </section>
+
+        <section class="rosa-card">
+            <h2>2. Ley de Watt</h2>
+            <div class="formula">P = V × I</div>
+            <p>Define la Potencia Eléctrica consumida.</p>
+            <img src="https://scontent-bog2-1.xx.fbcdn.net/v/t39.30808-6/482248357_662803926274957_8724187404740685114_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=04wIEl_bpLAQ7kNvwF1Kozw&_nc_oc=AdlMS36ADQC1suuCqYmvFBZvIRW8IjFMT7qy8oisz4buerPx8X67E-zBvQ2re9VY4Qo&_nc_zt=23&_nc_ht=scontent-bog2-1.xx&_nc_gid=zfCXZLHJDi1lwnTzWLVdWA&_nc_ss=8&oh=00_AfxaO5t17i2uPB7bfDqvWX1s6Jl-k0rwA7N5kVkdYDiAEA&oe=69B9ECAA" alt="Watt">
+        </section>
+    </article>
+
+    <article id="taller-lila" class="seccion-lila">
+        <header class="header-lila">
+            <h1>Taller de Investigación</h1>
+            <p>Fase 1: Bloques de Fundamentos</p>
+        </header>
+
+        <div class="lila-bloque">
+            <h2 style="color: var(--dark-lila)">Bloque 1: Fundamentos</h2>
+            <div class="item-lila">
+                <span class="label-lila">1. Electricidad:</span> Conjunto de fenómenos físicos relacionados con la presencia y el flujo de cargas eléctricas.<br>
+                <em>Medida: Julios (J) o Kilovatios-hora (kWh).</em>
+            </div>
+            <div class="item-lila">
+                <span class="label-lila">2. Electrón:</span> Pequeña partícula con carga negativa que rodea el núcleo del átomo.<br>
+                <em>Medida: Coulombs (C).</em>
+            </div>
+            <div class="item-lila">
+                <span class="label-lila">3. Movimiento de electrones:</span> Desplazamiento ordenado a través de un conductor.<br>
+                <em>Medida: Amperio (A).</em>
+            </div>
+        </div>
+
+        <div class="lila-bloque">
+            <h2 style="color: var(--dark-lila)">Bloque 2: Flujo Eléctrico</h2>
+            <div class="item-lila">
+                <span class="label-lila">Sentido Real:</span> Dirección verdadera del (-) al (+).
+            </div>
+            <div class="item-lila">
+                <span class="label-lila">Sentido Convencional:</span> Convención histórica del (+) al (-).
+            </div>
+        </div>
+
+        <div class="lila-bloque">
+            <h2 style="color: var(--dark-lila)">Bloque 3: Circuitos</h2>
+            <p><strong>Ánodo:</strong> Entrada de corriente. <strong>Cátodo:</strong> Salida de corriente.</p>
+            <p><strong>Fuente:</strong> Suministra energía. <strong>Receptor:</strong> Consume energía (Bombilla, motor).</p>
+        </div>
+
+        <div class="lila-bloque">
+            <h2 style="color: var(--dark-lila)">Bloque 4: Comprensión</h2>
+            <div class="item-lila">
+                <span class="label-lila">Electricidad:</span> Transporte de energía en grandes cantidades.
+            </div>
+            <div class="item-lila">
+                <span class="label-lila">Electrónica:</span> Control preciso del flujo para procesar información.
+            </div>
+        </div>
+        
+        <div class="lila-bloque">
+            <h2 style="color: var(--dark-lila)">Bloque 5: Magnitudes</h2>
+            <p><strong>Voltaje (V), Corriente (I), Resistencia (R), Potencia (P).</strong></p>
+        </div>
+    </article>
+
+</div>
+
+<footer style="text-align: center; padding: 20px; color: #888;">
+    <p>&copy; 2026 - Educación Técnica ♥</p>
+</footer>
+
+</body>
+</html>
 
