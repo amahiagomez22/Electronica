@@ -32,227 +32,33 @@
             padding: 0;
         }
 
-        /* ESTILO DEL ÍNDICE NAVEGABLE */
-        nav.indice {
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* BOTÓN CORAZÓN (ESTILO ORIGINAL) */
+        .area-boton-principal {
+            padding: 40px 0 20px 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
         }
 
-        nav.indice a {
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
-
-        .btn-lila { background: var(--primary-lila); color: var(--dark-lila); }
-        .btn-rosa { background: var(--rosa-principal); color: var(--blanco); }
-        .btn-lila:hover { background: var(--medium-lila); color: white; }
-        .btn-rosa:hover { background: var(--rosa-oscuro); }
-
-        .container {
-            max-width: 950px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        /* --- ESTILOS BLOQUE LILA --- */
-        .seccion-lila {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-            box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1);
-        }
-        .header-lila {
-            background-color: var(--dark-lila);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 15px 15px 0 0;
-            margin: -30px -30px 30px -30px;
-        }
-        .block-card {
-            border-left: 5px solid var(--medium-lila);
-            margin: 15px 0;
-            padding: 15px 20px;
-            background: #faf9ff;
-            border-radius: 0 10px 10px 0;
-        }
-        .label-lila { font-weight: bold; color: var(--dark-lila); }
-        .analogia-card {
-            background: var(--primary-lila);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        /* --- ESTILOS BLOQUE ROSA --- */
-        .seccion-rosa {
-            background: var(--rosa-pastel);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-            border: 2px solid var(--rosa-principal);
-        }
-        .header-rosa {
-            text-align: center;
-            padding: 40px 0;
-            background: var(--rosa-principal); 
-            color: var(--blanco);
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        .formula {
-            background: var(--blanco);
-            color: var(--rosa-oscuro);
-            padding: 20px;
-            border-left: 6px solid var(--rosa-oscuro);
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.4em;
-            text-align: center;
-            margin: 20px 0;
-            font-family: 'Courier New', Courier, monospace; 
-        }
-        .rosa-card {
-            background: var(--blanco);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .rosa-card h2 { color: var(--rosa-oscuro); border-bottom: 2px solid var(--rosa-principal); }
-        .rosa-card ul li::before { content: '♥ '; color: var(--rosa-oscuro); }
-        .rosa-card ul { list-style: none; padding-left: 0; }
-
-        /* BOTÓN CORAZÓN */
-        .area-boton { padding: 20px 0; display: flex; justify-content: center; }
         .boton-corazon {
-            position: relative; width: 50px; height: 50px; background-color: #ff69b4;
-            transform: rotate(-45deg); display: flex; justify-content: center;
-            align-items: center; text-decoration: none;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background-color: #ff69b4 !important;
+            transform: rotate(-45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
         }
-        .boton-corazon::before, .boton-corazon::after {
-            content: ""; position: absolute; width: 50px; height: 50px;
-            background-color: #ff69b4; border-radius: 50%;
-        }
-        .boton-corazon::before { top: -25px; left: 0; }
-        .boton-corazon::after { top: 0; left: 25px; }
-        .texto-boton { transform: rotate(45deg); color: white; font-weight: bold; font-size: 10px; z-index: 10; }
 
-        .image-placeholder img { max-width: 100%; border-radius: 10px; margin: 15px 0; }
-        footer { text-align: center; padding: 40px; color: #888; }
-    </style>
-</head>
-<body>
-
-<nav class="indice">
-    <a href="#taller-investigacion" class="btn-lila">1. Taller de Investigación (Lila)</a>
-    <a href="#leyes-fundamentales" class="btn-rosa">2. Leyes de la Electricidad (Rosa)</a>
-</nav>
-
-<div class="container">
-
-    <article id="taller-investigacion" class="seccion-lila">
-        <header class="header-lila">
-            <h1>Taller de Investigación</h1>
-            <p>Fases 1 a 5: Conceptos y Aplicaciones</p>
-        </header>
-
-        <h2>Bloque 1: Fundamentos</h2>
-        <div class="block-card">
-            <p><span class="label-lila">Electricidad:</span> Fenómenos físicos de flujo de carga. Se mide en Julios o kWh.</p>
-            <p><span class="label-lila">Electrón:</span> Partícula negativa (e-). Se mide en Coulombs.</p>
-            <p><span class="label-lila">Corriente:</span> Movimiento ordenado de electrones (Amperios A).</p>
-        </div>
-
-        <h2>Bloque 2 y 3: Sentidos y Circuitos</h2>
-        <div class="block-card">
-            <p><strong>Sentido Real:</strong> de (-) a (+). <strong>Sentido Convencional:</strong> de (+) a (-).</p>
-            <p><strong>Ánodo (A):</strong> Entrada. <strong>Cátodo (C):</strong> Salida.</p>
-            <p><strong>Receptor:</strong> Transforma energía (Luz, calor, movimiento).</p>
-        </div>
-
-        <h2>Bloque 4 y 5: Magnitudes</h2>
-        <div class="block-card">
-            <ul>
-                <li><strong>Voltaje (V):</strong> Diferencia de potencial (La fuerza).</li>
-                <li><strong>Resistencia (R):</strong> Oposición al flujo (Ohmios Ω).</li>
-                <li><strong>Potencia (P):</strong> Energía por tiempo (Vatios W).</li>
-            </ul>
-        </div>
-
-        <h2>Fase 4: Analogías</h2>
-        <div class="analogia-card"><strong>El Voltaje:</strong> Es la altura de un tanque de agua.</div>
-        <div class="analogia-card"><strong>La Corriente:</strong> Es el caudal (cuánta agua sale).</div>
-        <div class="analogia-card"><strong>La Resistencia:</strong> Es un filtro o boquilla que frena el agua.</div>
-    </article>
-
-    <article id="leyes-fundamentales" class="seccion-rosa">
-        <div class="area-boton">
-            <a href="https://jarudev.github.io/itcts4z/" class="boton-corazon">
-                <span class="texto-boton">VOLVER</span>
-            </a>
-        </div>
-
-        <header class="header-rosa">
-            <h1>Principios de Electricidad</h1>
-            <p>Por: Amahia Gomez ♥</p>
-        </header>
-
-        <section class="rosa-card">
-            <h2>1. Ley de Ohm</h2>
-            <p>Relaciona el Voltaje, la Corriente y la Resistencia.</p>
-            <div class="formula">V = I × R</div>
-            <div class="image-placeholder">
-                <img src="https://grupopc.com/wp-content/uploads/2024/07/Ley-Ohm.jpg" alt="Ley de Ohm">
-            </div>
-        </section>
-
-        <section class="rosa-card">
-            <h2>2. Ley de Watt</h2>
-            <p>Define la Potencia Eléctrica (Consumo).</p>
-            <div class="formula">P = V × I</div>
-            <div class="image-placeholder">
-                <img src="https://scontent-bog2-1.xx.fbcdn.net/v/t39.30808-6/482248357_662803926274957_8724187404740685114_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=04wIEl_bpLAQ7kNvwF1Kozw&_nc_oc=AdlMS36ADQC1suuCqYmvFBZvIRW8IjFMT7qy8oisz4buerPx8X67E-zBvQ2re9VY4Qo&_nc_zt=23&_nc_ht=scontent-bog2-1.xx&_nc_gid=zfCXZLHJDi1lwnTzWLVdWA&_nc_ss=8&oh=00_AfxaO5t17i2uPB7bfDqvWX1s6Jl-k0rwA7N5kVkdYDiAEA&oe=69B9ECAA" alt="Ley de Watt">
-            </div>
-        </section>
-
-        <section class="rosa-card">
-            <h2>3. Ley de Joule</h2>
-            <p>Explica la generación de calor por electricidad.</p>
-            <div class="formula">Q = I² × R × t</div>
-            <div class="image-placeholder">
-                <img src="https://www.lifeder.com/wp-content/uploads/2019/10/efecto-Joule-1.jpg" alt="Ley de Joule">
-            </div>
-        </section>
-
-        <section class="rosa-card">
-            <h2>Video de Apoyo</h2>
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; border: 3px solid var(--rosa-principal);">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JOtvbWTdD3U?si=QvfFPp5tiS90JRJG" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-    </article>
-
-</div>
-
-<footer>
-    <p>Educación Eléctrica 2026 - ♥ & ✦</p>
-</footer>
-
-</body>
-</html>
-
+        .boton-corazon::before,
+        .boton-corazon::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color:
 
 
 
