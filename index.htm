@@ -9,9 +9,11 @@
             --rosa-principal: #ffb6c1; 
             --rosa-oscuro: #ff69b4;   
             --rosa-pastel: #fff0f5;    
+            --borde-rosa: #ff85a2;
             --primary-lila: #e0d1ff;
             --medium-lila: #b79ced;
             --dark-lila: #6a4c93;
+            --accent-violet: #482d70;
             --bg-general: #fdfbff;
             --texto-oscuro: #4a4a4a;
             --blanco: #ffffff;
@@ -34,46 +36,46 @@
         }
         .boton-corazon {
             position: relative; width: 60px; height: 60px;
-            background-color: var(--rosa-oscuro); transform: rotate(-45deg);
+            background-color: #ff69b4 !important; transform: rotate(-45deg);
             display: flex; justify-content: center; align-items: center; text-decoration: none;
         }
         .boton-corazon::before, .boton-corazon::after {
             content: ""; position: absolute; width: 60px; height: 60px;
-            background-color: var(--rosa-oscuro); border-radius: 50%;
+            background-color: #ff69b4 !important; border-radius: 50%;
         }
         .boton-corazon::before { top: -30px; left: 0; }
         .boton-corazon::after { top: 0; left: 30px; }
-        .texto-boton { transform: rotate(45deg); color: white; font-weight: bold; font-size: 12px; z-index: 10; }
+        .texto-boton { transform: rotate(45deg); color: white !important; font-weight: bold; font-size: 12px; z-index: 100; font-family: sans-serif; }
 
-        /* NAVEGACIÓN */
+        /* ÍNDICE */
         nav.indice {
             background: white; position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: center; gap: 15px; padding: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        nav.indice a { text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; }
-        .btn-rosa { background: var(--rosa-principal); color: white; }
+        nav.indice a { text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 25px; transition: 0.3s; font-size: 0.9rem; }
+        .btn-rosa { background: var(--rosa-principal); color: var(--blanco); }
         .btn-lila { background: var(--primary-lila); color: var(--dark-lila); }
 
         .container { max-width: 900px; margin: 20px auto; padding: 20px; }
 
-        /* SECCIONES */
-        .seccion-rosa, .seccion-lila { padding: 30px; border-radius: 15px; margin-bottom: 50px; }
-        .seccion-rosa { background: var(--rosa-pastel); border: 2px solid var(--rosa-principal); }
-        .seccion-lila { background: white; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
+        /* SECCIÓN ROSA */
+        .seccion-rosa { background: var(--rosa-pastel); padding: 30px; border-radius: 15px; margin-bottom: 50px; border: 2px solid var(--rosa-principal); }
+        .rosa-card { background: white; padding: 30px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .formula { background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 20px; border-left: 6px solid var(--rosa-oscuro); border-radius: 8px; font-weight: bold; font-size: 1.4em; text-align: center; margin: 20px 0; font-family: 'Courier New', monospace; }
+        .rosa-card h2 { color: var(--rosa-oscuro); border-bottom: 2px solid var(--rosa-principal); padding-bottom: 10px; }
+        .rosa-card ul { list-style: none; padding-left: 0; }
+        .rosa-card ul li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .rosa-card ul li::before { content: '♥'; color: var(--rosa-oscuro); position: absolute; left: 0; }
 
-        /* CARDS ROSA */
-        .card { background: white; padding: 25px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .formula { background: var(--rosa-pastel); color: var(--rosa-oscuro); padding: 20px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.4em; margin: 20px 0; border-left: 6px solid var(--rosa-oscuro); }
-
-        /* ESTILOS LILA */
-        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 25px 0; }
+        /* SECCIÓN LILA */
+        .seccion-lila { background: white; padding: 30px; border-radius: 15px; margin-bottom: 50px; box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1); }
+        .header-lila { background-color: var(--dark-lila); color: white; padding: 2rem; text-align: center; border-radius: 15px; margin-bottom: 30px; }
+        .lila-bloque { border-bottom: 2px solid var(--primary-lila); padding: 20px 0; margin-bottom: 20px; }
         .lila-bloque:last-child { border-bottom: none; }
         .item-lila { background: #faf9ff; padding: 20px; border-left: 4px solid var(--medium-lila); border-radius: 0 10px 10px 0; margin-bottom: 20px; }
-        .fase-titulo { color: var(--dark-lila); font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 10px; }
         
-        img { max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0; display: block; margin-left: auto; margin-right: auto; }
-        .img-borde { border: 1px solid #eee; }
+        img { max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0; border: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -85,84 +87,136 @@
 </div>
 
 <nav class="indice">
-    <a href="#leyes-rosa" class="btn-rosa">1. Leyes Eléctricas (Rosa)</a>
-    <a href="#taller-lila" class="btn-lila">2. Taller de Investigación (Lila)</a>
+    <a href="#leyes-rosa" class="btn-rosa">Leyes de la Electricidad (Rosa)</a>
+    <a href="#taller-lila" class="btn-lila">Taller de Investigación (Lila)</a>
 </nav>
 
 <div class="container">
 
     <article id="leyes-rosa" class="seccion-rosa">
-        <h1 style="color: var(--rosa-oscuro); text-align: center;">Principios de Electricidad ♥</h1>
-        
-        <section class="card">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="color: var(--rosa-oscuro);">Principios de Electricidad</h1>
+            <p>Por: Amahia Gomez ♥</p>
+        </div>
+
+        <section class="rosa-card">
             <h2>1. Ley de Ohm</h2>
-            <p>Describe cómo el Voltaje se relaciona con la Corriente y la Resistencia.</p>
+            <p>Es la columna vertebral de la electrónica. Describe cómo el 'empuje' eléctrico (Voltaje) se relaciona con el flujo de energía (Corriente) y los obstáculos que encuentra (Resistencia).</p>
             <div class="formula">V = I × R</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ohm%27s_law_formula_wheel.svg/1024px-Ohm%27s_law_formula_wheel.svg.png" alt="Ley de Ohm">
+            <ul>
+                <li><strong>V:</strong> Voltaje (se mide en Voltios)</li>
+                <li><strong>I:</strong> Corriente (se mide en Amperios)</li>
+                <li><strong>R:</strong> Resistencia (se mide en Ohmios)</li>
+            </ul>
+            <img src="https://grupopc.com/wp-content/uploads/2024/07/Ley-Ohm.jpg" alt="Ley de Ohm">
         </section>
 
-        <section class="card">
+        <section class="rosa-card">
             <h2>2. Ley de Watt</h2>
             <p>Esta ley define la <strong>Potencia Eléctrica</strong>. Te dice cuánta energía se está usando o generando en cada segundo. Es fundamental para saber cuánto consumen tus electrodomésticos o tus servidores.</p>
             <div class="formula">P = V × I</div>
-            <ul style="list-style: none; padding: 0;">
-                <li>♥ <strong>P:</strong> Potencia (Vatios o Watts)</li>
-                <li>♥ <strong>V:</strong> Voltaje (Voltios)</li>
-                <li>♥ <strong>I:</strong> Corriente (Amperios)</li>
+            <ul>
+                <li><strong>P:</strong> Potencia (Vatios o Watts)</li>
+                <li><strong>V:</strong> Voltaje (Voltios)</li>
+                <li><strong>I:</strong> Corriente (Amperios)</li>
             </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ohms_Law_Wheel.svg/1024px-Ohms_Law_Wheel.svg.png" alt="Ley de Watt">
+            <img src="https://scontent-bog2-1.xx.fbcdn.net/v/t39.30808-6/482248357_662803926274957_8724187404740685114_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=04wIEl_bpLAQ7kNvwF1Kozw&_nc_oc=AdlMS36ADQC1suuCqYmvFBZvIRW8IjFMT7qy8oisz4buerPx8X67E-zBvQ2re9VY4Qo&_nc_zt=23&_nc_ht=scontent-bog2-1.xx&_nc_gid=zfCXZLHJDi1lwnTzWLVdWA&_nc_ss=8&oh=00_AfxaO5t17i2uPB7bfDqvWX1s6Jl-k0rwA7N5kVkdYDiAEA&oe=69B9ECAA" alt="Ley de Watt">
+        </section>
+
+        <section class="rosa-card">
+            <h2>3. Ley de Joule</h2>
+            <p>Explica por qué los aparatos eléctricos se calientan. Cuando la corriente lucha contra la resistencia, esa energía 'perdida' se transforma directamente en <strong>calor</strong>.</p>
+            <div class="formula">Q = I² × R × t</div>
+            <ul>
+                <li><strong>Q:</strong> Calor (Julios)</li>
+                <li><strong>I:</strong> Corriente (Amperios)</li>
+                <li><strong>R:</strong> Resistencia (Ohmios)</li>
+                <li><strong>t:</strong> Tiempo (Segundos)</li>
+            </ul>
+            <img src="https://www.lifeder.com/wp-content/uploads/2019/10/efecto-Joule-1.jpg" alt="Ley de Joule">
+        </section>
+
+        <section class="rosa-card">
+            <h2>Video de Apoyo</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; border: 3px solid var(--rosa-principal);">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JOtvbWTdD3U?si=QvfFPp5tiS90JRJG" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
         </section>
     </article>
 
     <article id="taller-lila" class="seccion-lila">
-        <h1 style="color: var(--dark-lila); text-align: center; margin-bottom: 40px;">Taller de Investigación</h1>
+        <header class="header-lila">
+            <h1>Taller de Investigación</h1>
+            <p>Fase 1 - Bloques de Fundamentos</p>
+        </header>
+
+        <div class="lila-bloque">
+            <h2>Bloque 1: Fundamentos</h2>
+            <div class="item-lila">
+                <strong>1. Electricidad</strong><br>
+                ¿Qué es? Es un conjunto de fenómenos físicos relacionados con la presencia y el flujo de cargas eléctricas.<br>
+                ¿Cuál es su unidad de medida? La energía eléctrica se mide en Julios (J) o, más comúnmente en el recibo de la luz, en Kilovatios-hora (kWh).<br>
+                ¿Tiene símbolo o forma de representación? Se suele representar con el símbolo de un rayo o mediante diagramas de circuitos donde se indica el flujo de energía.<br>
+                <em>Ejemplo en la vida real: El encendido de una bombilla al accionar un interruptor.</em>
+            </div>
+            <div class="item-lila">
+                <strong>2. Electrón</strong><br>
+                ¿Qué es? Es una pequeña partícula que rodea el núcleo del átomo y tiene una carga eléctrica negativa.<br>
+                ¿Cuál es su unidad de medida? Su carga eléctrica se mide en Coulombs (C).<br>
+                ¿Tiene símbolo o forma de representación? Se representa comúnmente con el símbolo e-<br>
+                <em>Ejemplo en la vida real: Los electrones que están en una alfombra provocando un corrientazo al tocar metal.</em>
+            </div>
+            <div class="item-lila">
+                <strong>3. Movimiento de electrones (Modelo básico)</strong><br>
+                ¿Qué es? Es el desplazamiento ordenado de electrones a través de un material conductor.<br>
+                ¿Cuál es su unidad de medida? Se mide como Intensidad de corriente, y su unidad es el Amperio (A).<br>
+                ¿Tiene símbolo o forma de representación? En física se representa con la letra I.<br>
+                <em>Ejemplo en la vida real: El flujo que viaja desde la batería de un celular hacia la pantalla.</em>
+            </div>
+        </div>
+
+        <div class="lila-bloque">
+            <h2>Bloque 2: Flujo Eléctrico</h2>
+            <div class="item-lila">
+                <strong>1. Sentido Real:</strong> Es la dirección física y verdadera en la que se desplazan los electrones (del terminal negativo al positivo).
+            </div>
+            <div class="item-lila">
+                <strong>2. Sentido Convencional:</strong> Es una convención histórica (del terminal positivo al negativo). Se representa con la letra I.
+            </div>
+        </div>
 
         <div class="lila-bloque">
             <h2>Bloque 3: Circuitos</h2>
-            <div class="item-lila">
-                <p><strong>Ánodo:</strong> Entrada de corriente. <strong>Cátodo:</strong> Salida de corriente.</p>
-                <p><strong>Fuente:</strong> Suministra energía. <strong>Receptor:</strong> Consume energía (Bombilla, motor).</p>
-            </div>
-            <img src="https://i.ibb.co/LhY0Z6K/symbols.jpg" class="img-borde" alt="Componentes y Símbolos Eléctricos">
+            <p><strong>Ánodo:</strong> Electrodo por donde la corriente entra. Asociado con el Voltaje (V), abreviado con la letra A.</p>
+            <p><strong>Cátodo:</strong> Electrodo por donde la corriente sale. Símbolo C.</p>
+            <p><strong>Fuente de alimentación:</strong> Encargada de suministrar energía eléctrica (Voltaje y Amperios).</p>
+            <p><strong>Receptor o carga:</strong> Elemento que consume energía para transformarla (Bombilla LED, motor). Se mide en Ohmios Ω y Vatios W.</p>
+            <p><strong>Circuito eléctrico:</strong> Camino cerrado por el cual circula la corriente.</p>
         </div>
 
         <div class="lila-bloque">
-            <h2>Bloque 4: Comprensión</h2>
+            <h2>Bloque 4: Comprensión Conceptual</h2>
             <div class="item-lila">
-                <p><strong>Electricidad:</strong> Transporte de energía en grandes cantidades.</p>
-                <p><strong>Electrónica:</strong> Control preciso del flujo para procesar información.</p>
+                <strong>1. Electricidad:</strong> Fenómeno físico que transporta y transforma energía en grandes cantidades (V, A, kWh).
             </div>
-            
-            <span class="fase-titulo">Fase 4: Analogía Hidráulica</span>
             <div class="item-lila">
-                <p>Voltaje = Altura del tanque (Presión). Corriente = Caudal de agua. Resistencia = Boquilla o filtro.</p>
+                <strong>2. Electrónica:</strong> Rama que manipula y controla el flujo de electrones con precisión para procesar información (mA, mV, Hz).
             </div>
-            <img src="https://i.ibb.co/VqnY4pW/hidraulica.jpg" alt="Analogía Hidráulica">
         </div>
 
         <div class="lila-bloque">
-            <h2>Bloque 5: Magnitudes y Análisis</h2>
-            <div class="item-lila">
-                <p><strong>Voltaje (V), Corriente (I), Resistencia (R), Potencia (P).</strong></p>
-            </div>
-
-            <span class="fase-titulo">Fases de Análisis</span>
-            <div class="item-lila">
-                <p><strong>Fase 2:</strong> ¿Por qué los electrones necesitan energía para moverse? Porque los átomos los mantienen atrapados. El voltaje es el empujón que los obliga a avanzar.</p>
-            </div>
-            <div class="item-lila">
-                <p><strong>Fase 3: Situación Cargador de Celular</strong> - El cargador reduce el voltaje (110V a 5V) y convierte AC a DC. Ocurre calentamiento por Efecto Joule debido a la resistencia de los componentes.</p>
-            </div>
-            <div class="item-lila">
-                <p><strong>Fase 5: El Bombillo</strong> - Enciende igual en ambos sentidos porque el brillo depende de los choques (fricción) de electrones en el filamento.</p>
-            </div>
-            <img src="https://i.ibb.co/6Y0Z2j4/bombillo.png" alt="Flujo Eléctrico Bombillo">
+            <h2>Bloque 5: Magnitudes Eléctricas</h2>
+            <p><strong>Carga eléctrica (Q):</strong> Propiedad de partículas subatómicas medida en Coulombs (C).</p>
+            <p><strong>Corriente (I):</strong> Flujo de electrones por unidad de tiempo medido en Amperios (A).</p>
+            <p><strong>Voltaje (V):</strong> Diferencia de potencial medida en Voltios (V).</p>
+            <p><strong>Resistencia (R):</strong> Oposición al paso de la corriente medida en Ohmios (Ω).</p>
+            <p><strong>Potencia (P):</strong> Proporción de energía transferida medida en Vatios (W).</p>
         </div>
     </article>
 </div>
 
 <footer>
-    <p style="text-align: center; color: #888; padding: 40px;">&copy; 2026 - Taller Final ♥</p>
+    <p style="text-align: center; padding: 40px; color: #888;">&copy; 2026 - Educación y Ciencia ♥</p>
 </footer>
 
 </body>
