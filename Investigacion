@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de Investigación - Electricidad</title>
+    <style>
+        :root {
+            --primary-lila: #e0d1ff;
+            --medium-lila: #b79ced;
+            --dark-lila: #6a4c93;
+            --accent-violet: #482d70;
+            --bg-body: #f8f6ff;
+            --text-color: #2d2a32;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--dark-lila);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; }
+        h2 { color: var(--dark-lila); border-bottom: 2px solid var(--medium-lila); padding-bottom: 5px; margin-top: 2rem; }
+        h3 { color: var(--accent-violet); background: var(--primary-lila); padding: 8px 15px; border-radius: 5px; display: inline-block; }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .phase-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(106, 76, 147, 0.1);
+        }
+
+        .block-card {
+            border-left: 5px solid var(--medium-lila);
+            margin: 15px 0;
+            padding: 15px 20px;
+            background: #faf9ff;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--dark-lila);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .item-detail {
+            margin-bottom: 8px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: var(--accent-violet);
+        }
+
+        .example-box {
+            background-color: #f0ebff;
+            padding: 10px;
+            border-radius: 5px;
+            font-style: italic;
+            margin-top: 10px;
+            border: 1px dashed var(--medium-lila);
+        }
+
+        .analogia-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .analogia-card {
+            background: var(--primary-lila);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--medium-lila);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-lila);
+        }
+
+        strong { color: var(--accent-violet); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Taller de Investigación</h1>
+    <p>Fundamentos de Electricidad y Electrónica</p>
+</header>
+
+<div class="container">
+
+    <section class="phase-section">
+        <h2>Fase 1: Conceptos Fundamentales</h2>
+        
+        <h3>Bloque 1: Fundamentos</h3>
+        <div class="block-card">
+            <span class="concept-title">1. Electricidad</span>
+            <div class="item-detail"><span class="label">¿Qué es?</span> Conjunto de fenómenos físicos relacionados con la presencia y el flujo de cargas eléctricas.</div>
+            <div class="item-detail"><span class="label">Unidad de medida:</span> Julios (J) o Kilovatios-hora (kWh).</div>
+            <div class="item-detail"><span class="label">Representación:</span> Símbolo de un rayo o diagramas de circuitos.</div>
+            <div class="example-box">Ejemplo: Encendido de una bombilla al accionar un interruptor.</div>
+        </div>
+
+        <div class="block-card">
+            <span class="concept-title">2. Electrón</span>
+            <div class="item-detail"><span class="label">¿Qué es?</span> Partícula con carga negativa que rodea el núcleo del átomo.</div>
+            <div class="item-detail"><span class="label">Unidad de medida:</span> Coulombs (C).</div>
+            <div class="item-detail"><span class="label">Símbolo:</span> e-</div>
+            <div class="example-box">Ejemplo: Electricidad estática al caminar con calcetines de lana sobre una alfombra.</div>
+        </div>
+
+        <div class="block-card">
+            <span class="concept-title">3. Movimiento de electrones</span>
+            <div class="item-detail"><span class="label">¿Qué es?</span> Desplazamiento ordenado de electrones a través de un conductor.</div>
+            <div class="item-detail"><span class="label">Unidad de medida:</span> Amperio (A).</div>
+            <div class="item-detail"><span class="label">Símbolo:</span> I (Intensidad).</div>
+            <div class="example-box">Ejemplo: Energía que viaja de la batería de un celular hacia su procesador.</div>
+        </div>
+
+        <h3>Bloque 2: Flujo Eléctrico</h3>
+        <div class="block-card">
+            <span class="concept-title">Sentido Real vs. Convencional</span>
+            <p><span class="label">Real:</span> Del terminal (-) al (+). Es el movimiento físico real.</p>
+            <p><span class="label">Convencional:</span> Del terminal (+) al (-). Es la norma técnica usada en libros y diagramas.</p>
+        </div>
+
+        <h3>Bloque 3: Circuitos</h3>
+        <div class="block-card">
+            <p><span class="label">Ánodo:</span> Electrodo de entrada de corriente (Oxidación). Símbolo: <strong>A</strong>.</p>
+            <p><span class="label">Cátodo:</span> Electrodo de salida de corriente. Símbolo: <strong>C</strong>.</p>
+            <p><span class="label">Fuente:</span> Suministra energía (Baterías, adaptadores). Medida en Voltios (V).</p>
+            <p><span class="label">Receptor:</span> Consume energía (Bombillas, motores). Medida en Ohmios (Ω) y Vatios (W).</p>
+        </div>
+        
+        <h3>Bloque 4 y 5: Magnitudes</h3>
+        <div class="block-card">
+            <p><span class="label">Voltaje (V):</span> La fuerza o empuje (Presión eléctrica).</p>
+            <p><span class="label">Resistencia (R):</span> Oposición al paso de la corriente (Ohmios Ω).</p>
+            <p><span class="label">Potencia (P):</span> Rapidez con la que se consume energía (Vatios W).</p>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 2: Análisis Conceptual</h2>
+        <div class="item-detail"><strong>¿Por qué se mueven los electrones?</strong> Necesitan el "empujón" del voltaje para vencer la atracción del átomo.</div>
+        <div class="item-detail"><strong>¿Resistencia cero?</strong> Provocaría un cortocircuito, elevando la corriente hasta derretir los conductores.</div>
+        <div class="item-detail"><strong>Cobre vs Plástico:</strong> El cobre es una "autopista" (conductor) y el plástico es un "muro" (aislante).</div>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 3: Situación Problema (Cargador de Celular)</h2>
+        <p>En un cargador, el <strong>voltaje</strong> cambia de 110V a 5V para proteger los circuitos delicados del móvil.</p>
+        <ul>
+            <li><strong>Resistencia:</strong> Se encuentra en el cable de cobre y los componentes internos.</li>
+            <li><strong>Calentamiento:</strong> El calor que sientes es el <em>Efecto Joule</em>; energía perdida por la resistencia.</li>
+            <li><strong>Ambas ramas:</strong> Es <strong>Electricidad</strong> (transporte de fuerza) y <strong>Electrónica</strong> (control preciso de datos y carga).</li>
+        </ul>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 4: Analogía Hidráulica</h2>
+        <div class="analogia-container">
+            <div class="analogia-card">
+                <strong>El Voltaje</strong>
+                <p>Es la altura del tanque de agua. A más altura, más presión para bajar.</p>
+            </div>
+            <div class="analogia-card">
+                <strong>La Corriente</strong>
+                <p>Es el caudal. Qué tanta agua sale por segundo por la manguera.</p>
+            </div>
+            <div class="analogia-card">
+                <strong>La Resistencia</strong>
+                <p>Es la boquilla o un filtro de arena que frena el paso del agua.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <h2>Fase 5: Conclusiones del Experimento</h2>
+        <div class="block-card">
+            <span class="label">El Bombillo:</span> Enciende igual en ambos sentidos porque el brillo depende del choque de electrones (fricción), sin importar hacia dónde caminen.
+        </div>
+        <div class="block-card">
+            <span class="label">Polos:</span> El <strong>Polo (+)</strong> es la salida con máxima energía, y el <strong>Polo (-)</strong> es el regreso tras haber entregado la energía al receptor.
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>Taller de Investigación - 2026 &copy; Diseño en Tonos Lilas</p>
+</footer>
+
+</body>
+</html>
