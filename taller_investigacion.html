@@ -237,7 +237,7 @@
    <h2>FASE 5: ANÁLISIS FINAL</h2>
 <div class="section">
     <div style="text-align: center; margin-bottom: 20px; padding: 10px; border: 2px dashed var(--lila-borde); border-radius: 10px; background: linear-gradient(135deg, #e6e6fa 0%, #d8bfd8 100%);">
-        <canvas id="circuitoAnimado" width="400" height="200" style="max-width: 100%; height: auto;"></canvas>
+        <canvas id="circuitoAnimado" width="400" height="220" style="max-width: 100%; height: auto;"></canvas>
     </div>
 
     <p>1. El bombillo enciende igual porque depende del flujo de cargas chocando con átomos del filamento, generando calor y luz.</p>
@@ -248,49 +248,57 @@
 <script>
     const canvas = document.getElementById('circuitoAnimado');
     const ctx = canvas.getContext('2d');
-    let offset = 0;
+    let offsetConvencional = 0;
+    let offsetElectrones = 0;
 
     function dibujarCircuito() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         ctx.strokeStyle = '#333';
-        ctx.lineWidth = 5;
+        ctx.lineWidth = 12; 
         ctx.lineJoin = 'round';
-        ctx.strokeRect(50, 50, 300, 100);
+        ctx.strokeRect(50, 50, 300, 120);
 
         ctx.fillStyle = '#222';
-        ctx.fillRect(160, 140, 80, 25);
-        ctx.strokeStyle = '#9370DB'; 
-        ctx.lineWidth = 2;
-        ctx.strokeRect(160, 140, 80, 25);
-
+        ctx.fillRect(160, 160, 80, 25);
         ctx.fillStyle = '#ff3333'; 
-        ctx.fillRect(220, 140, 20, 25);
+        ctx.fillRect(210, 160, 30, 25);
         
         ctx.beginPath();
         ctx.arc(200, 50, 18, 0, Math.PI * 2);
         ctx.fillStyle = '#fff8dc';
-        ctx.shadowBlur = 20;
+        ctx.shadowBlur = 25;
         ctx.shadowColor = "#dda0dd"; 
         ctx.fill();
-        ctx.shadowBlur = 0; 
+        ctx.shadowBlur = 0;
 
-        offset += 0.8;
-        if (offset > 40) offset = 0;
-        ctx.fillStyle = '#ee0000';
-        for (let i = 0; i < 800; i += 40) {
-            let pos = (i + offset) % 800;
-            let x, y;
-            
-            if (pos < 300) { x = 350 - pos; y = 50; } 
-            else if (pos < 400) { x = 50; y = 50 + (pos - 300); } 
-            else if (pos < 700) { x = 50 + (pos - 400); y = 150; } 
-            else { x = 350; y = 150 - (pos - 700); } 
+        offsetConvencional += 0.7; 
+        offsetElectrones -= 0.7;    
+        
+        if (offsetConvencional > 40) offsetConvencional = 0;
+        if (offsetElectrones < 0) offsetElectrones = 40;
 
-            ctx.beginPath();
-            ctx.arc(x, y, 3.5, 0, Math.PI * 2);
-            ctx.fill();
+        function dibujarCargas(offset, color, grosor, radioY) {
+            ctx.fillStyle = color;
+            for (let i = 0; i < 840; i += 40) {
+                let pos = (i + offset) % 840;
+                if (pos < 0) pos += 840;
+                
+                let x, y;
+                if (pos < 300) { x = 350 - pos; y = 50 + radioY; } 
+                else if (pos < 420) { x = 50 - radioY; y = 50 + (pos - 300); }
+                else if (pos < 720) { x = 50 + (pos - 420); y = 170 - radioY; }
+                else { x = 350 + radioY; y = 170 - (pos - 720); }
+
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
+
+        dibujarCargas(offsetConvencional, '#ff0000', 3, -4);
+        
+        dibujarCargas(offsetElectrones, '#00bfff', 3, 4);
 
         requestAnimationFrame(dibujarCircuito);
     }
