@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Electrónica - Unidades de Aprendizaje</title>
+    <style>
+        /* Variables de Paleta de Colores Verde Pastel */
+        :root {
+            --bg-principal: #f4f9f4;
+            --bg-tarjeta: #ffffff;
+            --verde-oscuro: #2d5a27;
+            --verde-medio: #60a561;
+            --verde-pastel: #c8e6c9;
+            --verde-claro-fresco: #e8f5e9;
+            --texto-principal: #2c3e50;
+            --texto-secundario: #546e7a;
+            --borde-suave: #e0ebe0;
+            --analogia-bg: #fffde7;
+            --analogia-borde: #fff59d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: var(--verde-oscuro);
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--verde-claro-fresco);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Barra de Navegación Funcional */
+        nav {
+            background-color: var(--bg-tarjeta);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--verde-pastel);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li {
+            margin: 0.3rem 0.8rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--verde-oscuro);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--verde-pastel);
+            color: var(--verde-oscuro);
+        }
+
+        /* Contenedor Principal */
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Sección de Unidad */
+        .unidad-section {
+            background-color: var(--bg-tarjeta);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(45,90,39,0.03);
+            border: 1px solid var(--borde-suave);
+            scroll-margin-top: 80px; /* Evita que el menú sticky tape el título */
+        }
+
+        .unidad-section h2 {
+            color: var(--verde-oscuro);
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--verde-pastel);
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Cuadrícula de Conceptos */
+        .conceptos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Tarjeta de Concepto */
+        .concepto-card {
+            background-color: var(--bg-principal);
+            border-left: 5px solid var(--verde-medio);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concepto-card h3 {
+            color: var(--verde-oscuro);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Bloque de Analogía */
+        .analogia-box {
+            background-color: var(--analogia-bg);
+            border: 1px solid var(--analogia-borde);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .analogia-box strong {
+            color: #7f8c8d;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Bloque de Aplicación Real */
+        .aplicacion-box {
+            background-color: var(--verde-claro-fresco);
+            border-left: 3px dashed var(--verde-medio);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .aplicacion-box h4 {
+            color: var(--verde-oscuro);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contenedor de Diagramas (Espacio para imágenes) */
+        .diagrama-placeholder {
+            background-color: #eaedea;
+            border: 2px dashed #bdc3c7;
+            border-radius: 6px;
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--texto-secundario);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .diagrama-placeholder svg {
+            fill: var(--verde-medio);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--verde-oscuro);
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsivo */
+        @media (min-width: 768px) {
+            .conceptos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado del Sitio -->
+    <header>
+        <h1>Plataforma Educativa de Electrónica</h1>
+        <p>Explora de forma visual e intuitiva los componentes esenciales de la electrónica analógica y de potencia.</p>
+    </header>
+
+    <!-- Menú de Navegación Funcional -->
+    <nav>
+        <ul>
+            <li><a href="#unidad1">Unidad 1: Diodos</a></li>
+            <li><a href="#unidad2">Unidad 2: BJT</a></li>
+            <li><a href="#unidad3">Unidad 3: MOSFET</a></li>
+            <li><a href="#unidad4">Unidad 4: Potencia</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+
+        <!-- UNIDAD 1 -->
+        <section id="unidad1" class="unidad-section">
+            <h2>Unidad 1: Semiconductores y Diodos</h2>
+            
+            <div class="analogia-box">
+                <strong>💡 Analogía General</strong>
+                Imagina un diodo como una <strong>válvula de retención de agua</strong> en una tubería: permite que el agua fluya libremente en una dirección, pero si el agua intenta regresar en sentido contrario, la válvula se cierra automáticamente bloqueando el paso.
+            </div>
+
+            <div class="conceptos-grid">
+                <div class="concepto-card">
+                    <h3>Semiconductores y Unión PN</h3>
+                    <p>Los semiconductores son materiales como el silicio cuya conductividad se puede controlar. Al unir un cristal tipo P (rico en cargas positivas o huecos) con uno tipo N (rico en electrones), se crea la <strong>Unión PN</strong>, formando una barrera interna de energía que requiere aproximadamente 0.7V para ser superada.</p>
+                    
+                    <div class="diagrama-placeholder">
+                        <svg width="40" height="40" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14H9v-2h2v2zm0-4H9V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <br>[ Diagrama Interactivo: Unión PN en polarización directa e inversa ]
+                    </div>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>Diodos Convencionales</h3>
+                    <p>Componente electrónico que solo permite el flujo de corriente en un sentido (polarización directa). Cuando se conecta al revés (polarización inversa), actúa como un aislante casi perfecto.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p><strong>Rectificación de Corriente:</strong> Se utilizan en los cargadores de smartphones para transformar la corriente alterna (AC) de los enchufes domésticos en corriente directa (DC) estable.</p>
+                    </div>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>LED (Diodo Emisor de Luz)</h3>
+                    <p>Un tipo de diodo semiconductor especial que, al ser polarizado directamente, permite que los electrones recombinen liberando energía en forma de fotones de luz visible o infrarroja.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p>Sistemas de iluminación de alta eficiencia energética, pantallas de televisores, indicadores y semáforos.</p>
+                    </div>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>Diodo Zener</h3>
+                    <p>A diferencia de los diodos comunes, el Zener está diseñado para operar de forma segura en su zona de "ruptura inversa". Al alcanzar un voltaje específico, conduce en sentido inverso manteniendo ese nivel de voltaje constante.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p><strong>Reguladores de Voltaje:</strong> Protegen circuitos electrónicos integrados sensibles asegurando que nunca reciban picos de tensión dañinos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIDAD 2 -->
+        <section id="unidad2" class="unidad-section">
+            <h2>Unidad 2: Transistores de Unión Bipolar (BJT)</h2>
+            
+            <div class="analogia-box">
+                <strong>💡 Analogía General</strong>
+                El transistor BJT funciona exactamente como una <strong>llave de agua manual</strong>. Aplicando un esfuerzo muy pequeño para mover la perilla (Corriente de Base), puedes abrir y controlar un caudal de agua muchísimo mayor y potente que cruza la tubería (Corriente de Colector a Emisor).
+            </div>
+
+            <div class="conceptos-grid">
+                <div class="concepto-card">
+                    <h3>¿Qué es el BJT y cómo se Polariza?</h3>
+                    <p>El BJT cuenta con tres terminales: Base, Colector y Emisor. La polarización consiste en aplicar los voltajes correctos en sus terminales para definir de qué manera se comportará el flujo electrónico del dispositivo.</p>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>Regiones de Operación</h3>
+                    <p>Dependiendo de las corrientes aplicadas, opera en tres estados:</p>
+                    <ul>
+                        <li><strong>Corte:</strong> No hay corriente en la base; el transistor actúa como un interruptor totalmente abierto.</li>
+                        <li><strong>Saturación:</strong> Corriente máxima en la base; actúa como un interruptor cerrado permitiendo paso total.</li>
+                        <li><strong>Región Activa:</strong> La corriente de salida es proporcional a la de entrada, ideal para amplificación.</li>
+                    </ul>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>Conmutación con BJT</h3>
+                    <p>Consiste en forzar al transistor a saltar únicamente entre los extremos de Corte y Saturación de forma ultra veloz, omitiendo la etapa activa de amplificación.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p>Controlar desde un microcontrolador de baja potencia (como un Arduino o Raspberry) el encendido y apagado rápido de motores eléctricos de CC o relés de potencia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIDAD 3 -->
+        <section id="unidad3" class="unidad-section">
+            <h2>Unidad 3: FET y MOSFET</h2>
+            
+            <div class="analogia-box">
+                <strong>💡 Analogía General</strong>
+                El MOSFET se asemeja a presionar una <strong>manguera de riego flexible con tus dedos</strong>. Al ejercer presión externa (Campo eléctrico por Voltaje), estrangulas o abres el canal por donde pasa el agua, pero el agua dentro de la manguera jamás entra en contacto con tu mano (Compuerta aislada).
+            </div>
+
+            <div class="conceptos-grid">
+                <div class="concepto-card">
+                    <h3>Estructura del FET / MOSFET</h3>
+                    <p>Son transistores controlados por <strong>Voltaje</strong> en su terminal de Compuerta (Gate), en lugar de corriente. Su compuerta tiene un aislamiento microscópico de dióxido de silicio, lo que significa que su consumo de corriente de control es prácticamente cero.</p>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>Amplificadores con MOSFET</h3>
+                    <p>Gracias a su altísima resistencia o impedancia de entrada, los MOSFET capturan señales eléctricas minúsculas e inestables y las recrean a gran escala de potencia sin alterar ni distorsionar la señal original.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p>Procesamiento de señales de audio de alta fidelidad y en las etapas de amplificación de sistemas de telecomunicaciones inalámbricas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIDAD 4 -->
+        <section id="unidad4" class="unidad-section">
+            <h2>Unidad 4: Tiristores y Electrónica de Potencia</h2>
+            
+            <div class="analogia-box">
+                <strong>💡 Analogía General</strong>
+                Un tiristor funciona como los <strong>interruptores automáticos de seguridad (breakers)</strong> de tu hogar: una vez que se activa o "dispara" por una señal de alarma, el flujo eléctrico se queda encendido de manera permanente aunque la señal original desaparezca. Solo se apagará si cortas el suministro principal de raíz.
+            </div>
+
+            <div class="conceptos-grid">
+                <div class="concepto-card">
+                    <h3>SCR (Rectificador Controlado de Silicio)</h3>
+                    <p>Es un diodo convencional de potencia provisto de una tercera terminal de disparo llamada compuerta (Gate). Conduce en una dirección y se mantiene encendido de forma autónoma hasta que la corriente principal del circuito desciende por completo a cero.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p>Sistemas de seguridad industrial, rectificación controlada de motores pesados de fábricas y alarmas contra incendios.</p>
+                    </div>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>TRIAC</h3>
+                    <p>Es un dispositivo bidireccional equivalente a tener dos SCR integrados en sentido opuesto. Esto le da la increíble propiedad de controlar flujos de corriente eléctrica en ambos semiciclos de la Corriente Alterna (AC).</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p><strong>Atenuadores de luz (Dimmers):</strong> Perillas giratorias domésticas para regular la intensidad de las lámparas y el control de velocidad en electrodomésticos como licuadoras o taladros.</p>
+                    </div>
+                </div>
+
+                <div class="concepto-card">
+                    <h3>Introducción a la Electrónica de Potencia</h3>
+                    <p>Es la subdisciplina encargada de transformar, adaptar y controlar voltajes y corrientes de gran magnitud (kilovatios) utilizando dispositivos semiconductores de estado sólido de alta velocidad de respuesta.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>© 2026 Plataforma Educativa de Electrónica. Diseñado de forma limpia y accesible.</p>
+    </footer>
+
+</body>
+</html>
