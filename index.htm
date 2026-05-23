@@ -11,9 +11,10 @@
             --lila: #e0d1ff;
             --lila-oscuro: #6a4c93;
             --gris-suave: #f0f0f0;
-            /* Nuevas variables añadidas de la paleta verde pastel */
-            --verde-medio: #60a561;
-            --verde-oscuro: #2d5a27;
+            
+            /* Verdes pastel mucho más claros */
+            --verde-claro: #c8e6c9; 
+            --verde-oscuro-texto: #2d5a27;
         }
 
         body {
@@ -67,7 +68,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-
         .btn-leyes {
             background-color: var(--rosa);
             color: white;
@@ -80,11 +80,11 @@
             border-color: var(--lila-oscuro);
         }
 
-        /* Nueva clase con la estética verde pastel */
+        /* Botón 3 corregido con el verde súper pastel */
         .btn-electronica {
-            background-color: var(--verde-medio);
-            color: white;
-            border-color: var(--verde-oscuro);
+            background-color: var(--verde-claro);
+            color: var(--verde-oscuro-texto);
+            border-color: var(--verde-oscuro-texto);
         }
 
         .btn-externo {
@@ -121,7 +121,6 @@
                 2. Taller de Investigación
             </a>
 
-             <!-- Enlace corregido y con la nueva clase verde asignada -->
              <a href="electronica_basica.html" class="opcion-card btn-electronica">
                 3. Electrónica Básica
             </a>
