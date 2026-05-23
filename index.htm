@@ -11,6 +11,9 @@
             --lila: #e0d1ff;
             --lila-oscuro: #6a4c93;
             --gris-suave: #f0f0f0;
+            /* Nuevas variables añadidas de la paleta verde pastel */
+            --verde-medio: #60a561;
+            --verde-oscuro: #2d5a27;
         }
 
         body {
@@ -77,6 +80,13 @@
             border-color: var(--lila-oscuro);
         }
 
+        /* Nueva clase con la estética verde pastel */
+        .btn-electronica {
+            background-color: var(--verde-medio);
+            color: white;
+            border-color: var(--verde-oscuro);
+        }
+
         .btn-externo {
             background-color: var(--gris-suave);
             color: #555;
@@ -111,8 +121,9 @@
                 2. Taller de Investigación
             </a>
 
-             <a href="electronica_basica" class="opcion-card btn-electronica">
-                1. Leyes Fundamentales
+             <!-- Enlace corregido y con la nueva clase verde asignada -->
+             <a href="electronica_basica.html" class="opcion-card btn-electronica">
+                3. Electrónica Básica
             </a>
 
             <hr style="width: 80%; border: 0.5px solid #eee; margin: 10px auto;">
