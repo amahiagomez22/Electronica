@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto de Electrónica - Unidades de Aprendizaje</title>
     <style>
-        /* Variables de Paleta de Colores Verde Pastel */
+        /* Variables de Paleta de Colores Verde Ultra Claro Pastel */
         :root {
-            --bg-principal: #f4f9f4;
+            --bg-principal: #f7fbf7;         /* Fondo de pantalla extremadamente suave */
             --bg-tarjeta: #ffffff;
-            --verde-oscuro: #2d5a27;
-            --verde-medio: #60a561;
-            --verde-pastel: #c8e6c9;
-            --verde-claro-fresco: #e8f5e9;
+            --verde-oscuro: #2d5a27;         /* Verde bosque suave, exclusivo para texto legible */
+            --verde-medio: #a1d7a1;          /* Verde menta pastel para acentos y el corazón */
+            --verde-pastel: #e2f3e2;         /* Verde ultra claro para fondos de menú y bordes */
+            --verde-claro-fresco: #edf7ed;   /* Tono casi blanco verdoso para bloques destacados */
             --texto-principal: #2c3e50;
             --texto-secundario: #546e7a;
-            --borde-suave: #e0ebe0;
+            --borde-suave: #eef5ee;
             --analogia-bg: #fffde7;
             --analogia-borde: #fff59d;
         }
@@ -36,11 +36,11 @@
 
         /* Encabezado */
         header {
-            background-color: var(--verde-oscuro);
-            color: #ffffff;
+            background-color: var(--verde-pastel);
+            color: var(--verde-oscuro);
             text-align: center;
             padding: 2.5rem 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--borde-suave);
         }
 
         header h1 {
@@ -51,7 +51,7 @@
 
         header p {
             font-size: 1.1rem;
-            color: var(--verde-claro-fresco);
+            color: var(--texto-secundario);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -62,7 +62,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
             border-bottom: 2px solid var(--verde-pastel);
             margin-bottom: 2rem;
         }
@@ -96,13 +96,13 @@
             color: var(--verde-oscuro);
         }
 
-        /* --- ESTILOS DEL BOTÓN CORAZÓN ADAPTADO A VERDE --- */
+        /* --- ESTILOS DEL BOTÓN CORAZÓN VERDE PASTEL CLARO --- */
         .area-boton {
             max-width: 1100px;
             margin: 0 auto 30px auto;
             padding: 0 1rem;
             display: flex;
-            justify-content: flex-start; /* Alineado al inicio del contenido */
+            justify-content: flex-start;
         }
 
         .boton-corazon {
@@ -117,12 +117,12 @@
             text-decoration: none;
             transition: transform 0.3s, background-color 0.3s;
             z-index: 900;
-            margin-top: 20px; /* Margen superior para darle aire respecto al nav */
+            margin-top: 20px;
         }
 
         .boton-corazon:hover {
             transform: rotate(-45deg) scale(1.1);
-            background-color: var(--verde-oscuro) !important;
+            background-color: var(--verde-pastel) !important;
         }
 
         .boton-corazon::before,
@@ -138,7 +138,7 @@
 
         .boton-corazon:hover::before,
         .boton-corazon:hover::after {
-            background-color: var(--verde-oscuro) !important;
+            background-color: var(--verde-pastel) !important;
         }
 
         .boton-corazon::before { top: -30px; left: 0; }
@@ -146,7 +146,7 @@
 
         .texto-boton {
             transform: rotate(45deg);
-            color: white !important;
+            color: var(--verde-oscuro) !important;
             font-weight: bold;
             font-size: 11px;
             z-index: 100;
@@ -169,7 +169,7 @@
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(45,90,39,0.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.01);
             border: 1px solid var(--borde-suave);
             scroll-margin-top: 80px;
         }
@@ -239,8 +239,8 @@
 
         /* Contenedor de Diagramas */
         .diagrama-placeholder {
-            background-color: #eaedea;
-            border: 2px dashed #bdc3c7;
+            background-color: #f3f7f3;
+            border: 2px dashed #cfe2cf;
             border-radius: 6px;
             padding: 1.5rem;
             text-align: center;
@@ -258,32 +258,21 @@
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: var(--verde-oscuro);
-            color: #ffffff;
+            background-color: var(--verde-pastel);
+            color: var(--verde-oscuro);
             font-size: 0.9rem;
             margin-top: 4rem;
+            border-top: 1px solid var(--borde-suave);
         }
     </style>
 </head>
 <body>
 
-<div class="area-boton">
-
-<a href="https://amahiagomez22.github.io/Electronica/" class="boton-corazon">
-
-<span class="texto-boton">VOLVER</span>
-
-</a>
-
-</div>
-
-    <!-- Encabezado del Sitio -->
     <header>
         <h1>Plataforma Educativa de Electrónica</h1>
         <p>Explora de forma visual e intuitiva los componentes esenciales de la electrónica analógica y de potencia.</p>
     </header>
 
-    <!-- Menú de Navegación Funcional -->
     <nav>
         <ul>
             <li><a href="#unidad1">Unidad 1: Diodos</a></li>
@@ -293,16 +282,13 @@
         </ul>
     </nav>
 
-    <!-- Área del Botón Corazón Integrada -->
     <div class="area-boton">
         <a href="#" class="boton-corazon">
             <span class="texto-boton">Inicio</span>
         </a>
     </div>
 
-    <!-- Contenido Principal -->
     <main>
-        <!-- UNIDAD 1 -->
         <section id="unidad1" class="unidad-section">
             <h2>Unidad 1: Semiconductores y Diodos</h2>
             
@@ -351,7 +337,6 @@
             </div>
         </section>
 
-        <!-- UNIDAD 2 -->
         <section id="unidad2" class="unidad-section">
             <h2>Unidad 2: Transistores de Unión Bipolar (BJT)</h2>
             
@@ -387,7 +372,6 @@
             </div>
         </section>
 
-        <!-- UNIDAD 3 -->
         <section id="unidad3" class="unidad-section">
             <h2>Unidad 3: FET y MOSFET</h2>
             
@@ -413,7 +397,6 @@
             </div>
         </section>
 
-        <!-- UNIDAD 4 -->
         <section id="unidad4" class="unidad-section">
             <h2>Unidad 4: Tiristores y Electrónica de Potencia</h2>
             
@@ -449,7 +432,6 @@
         </section>
     </main>
 
-    <!-- Pie de Página -->
     <footer>
         <p>© 2026 Plataforma Educativa de Electrónica. Diseñado de forma limpia y accesible.</p>
     </footer>
