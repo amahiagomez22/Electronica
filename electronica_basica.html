@@ -64,6 +64,7 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             border-bottom: 2px solid var(--verde-pastel);
+            margin-bottom: 2rem;
         }
 
         nav ul {
@@ -95,10 +96,70 @@
             color: var(--verde-oscuro);
         }
 
+        /* --- ESTILOS DEL BOTÓN CORAZÓN ADAPTADO A VERDE --- */
+        .area-boton {
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: flex-start; /* Alineado al inicio del contenido */
+        }
+
+        .boton-corazon {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background-color: var(--verde-medio) !important;
+            transform: rotate(-45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+            z-index: 900;
+            margin-top: 20px; /* Margen superior para darle aire respecto al nav */
+        }
+
+        .boton-corazon:hover {
+            transform: rotate(-45deg) scale(1.1);
+            background-color: var(--verde-oscuro) !important;
+        }
+
+        .boton-corazon::before,
+        .boton-corazon::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: var(--verde-medio) !important;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .boton-corazon:hover::before,
+        .boton-corazon:hover::after {
+            background-color: var(--verde-oscuro) !important;
+        }
+
+        .boton-corazon::before { top: -30px; left: 0; }
+        .boton-corazon::after { top: 0; left: 30px; }
+
+        .texto-boton {
+            transform: rotate(45deg);
+            color: white !important;
+            font-weight: bold;
+            font-size: 11px;
+            z-index: 100;
+            text-decoration: none;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 1.2;
+        }
+
         /* Contenedor Principal */
         main {
             max-width: 1100px;
-            margin: 2rem auto;
+            margin: 0 auto;
             padding: 0 1rem;
         }
 
@@ -110,7 +171,7 @@
             margin-bottom: 3rem;
             box-shadow: 0 5px 15px rgba(45,90,39,0.03);
             border: 1px solid var(--borde-suave);
-            scroll-margin-top: 80px; /* Evita que el menú sticky tape el título */
+            scroll-margin-top: 80px;
         }
 
         .unidad-section h2 {
@@ -176,7 +237,7 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Contenedor de Diagramas (Espacio para imágenes) */
+        /* Contenedor de Diagramas */
         .diagrama-placeholder {
             background-color: #eaedea;
             border: 2px dashed #bdc3c7;
@@ -202,13 +263,6 @@
             font-size: 0.9rem;
             margin-top: 4rem;
         }
-
-        /* Responsivo */
-        @media (min-width: 768px) {
-            .conceptos-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
@@ -229,9 +283,15 @@
         </ul>
     </nav>
 
+    <!-- Área del Botón Corazón Integrada -->
+    <div class="area-boton">
+        <a href="#" class="boton-corazon">
+            <span class="texto-boton">Inicio</span>
+        </a>
+    </div>
+
     <!-- Contenido Principal -->
     <main>
-
         <!-- UNIDAD 1 -->
         <section id="unidad1" class="unidad-section">
             <h2>Unidad 1: Semiconductores y Diodos</h2>
@@ -364,7 +424,7 @@
 
                 <div class="concepto-card">
                     <h3>TRIAC</h3>
-                    <p>Es un dispositivo bidireccional equivalente a tener dos SCR integrados en sentido opuesto. Esto le da la increíble propiedad de controlar flujos de corriente eléctrica en ambos semiciclos de la Corriente Alterna (AC).</p>
+                    <p>Es un dispositivo documento bidireccional equivalente a tener dos SCR integrados en sentido opuesto. Esto le da la increíble propiedad de controlar flujos de corriente eléctrica en ambos semiciclos de la Corriente Alterna (AC).</p>
                     <div class="aplicacion-box">
                         <h4>🚀 Aplicación Real:</h4>
                         <p><strong>Atenuadores de luz (Dimmers):</strong> Perillas giratorias domésticas para regular la intensidad de las lámparas y el control de velocidad en electrodomésticos como licuadoras o taladros.</p>
@@ -377,7 +437,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Pie de Página -->
