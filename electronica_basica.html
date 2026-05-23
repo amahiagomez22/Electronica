@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto de Electrónica - Unidades de Aprendizaje</title>
     <style>
-        /* Variables de Paleta de Colores Verde Ultra Claro Pastel */
+        /* Variables de Paleta de Colores Pastel */
         :root {
-            --bg-principal: #f7fbf7;         /* Fondo de pantalla extremadamente suave */
+            --bg-principal: #f7fbf7;         
             --bg-tarjeta: #ffffff;
-            --verde-oscuro: #2d5a27;         /* Verde bosque suave, exclusivo para texto legible */
-            --verde-medio: #a1d7a1;          /* Verde menta pastel para acentos y el corazón */
-            --verde-pastel: #e2f3e2;         /* Verde ultra claro para fondos de menú y bordes */
-            --verde-claro-fresco: #edf7ed;   /* Tono casi blanco verdoso para bloques destacados */
+            --verde-oscuro: #2d5a27;         
+            --verde-medio: #a1d7a1;          
+            --verde-pastel: #e2f3e2;         
+            --verde-claro-fresco: #edf7ed;   
             --texto-principal: #2c3e50;
             --texto-secundario: #546e7a;
             --borde-suave: #eef5ee;
             --analogia-bg: #fffde7;
             --analogia-borde: #fff59d;
+            
+            /* Colores dinámicos para los componentes visuales */
+            --rosa-pastel: #ffb6c1;          
+            --rosa-oscuro: #7d3c4c;
+            --morado-pastel: #e8dff5;
+            --morado-oscuro: #4a306d;
+            --azul-pastel: #chd9fa;
+            --azul-oscuro: #1d3557;
         }
 
         * {
@@ -237,21 +245,26 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Contenedor de Diagramas */
-        .diagrama-placeholder {
-            background-color: #f3f7f3;
-            border: 2px dashed #cfe2cf;
-            border-radius: 6px;
-            padding: 1.5rem;
-            text-align: center;
-            color: var(--texto-secundario);
-            margin: 1rem 0;
-            font-size: 0.9rem;
+        /* --- ANIMACIONES CSS PARA EL CONTENIDO DINÁMICO --- */
+        @keyframes fluir-corriente {
+            0% { left: 0%; }
+            100% { left: 100%; }
         }
 
-        .diagrama-placeholder svg {
-            fill: var(--verde-medio);
-            margin-bottom: 0.5rem;
+        @keyframes parpadeo-sw {
+            0%, 100% { background-color: #ff9800; text-shadow: 0 0 5px #fff; }
+            50% { background-color: #555; text-shadow: none; }
+        }
+
+        .punto-corriente {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: fluir-corriente 2s infinite linear;
         }
 
         /* Footer */
@@ -282,15 +295,11 @@
         </ul>
     </nav>
 
-   <div class="area-boton">
-
-<a href="https://amahiagomez22.github.io/Electronica/" class="boton-corazon">
-
-<span class="texto-boton">VOLVER</span>
-
-</a>
-
-</div>
+    <div class="area-boton">
+        <a href="index.html" class="boton-corazon">
+            <span class="texto-boton">Inicio</span>
+        </a>
+    </div>
 
     <main>
         <section id="unidad1" class="unidad-section">
@@ -306,21 +315,22 @@
                     <h3>Semiconductores y Unión PN</h3>
                     <p>Los semiconductores son materiales como el silicio cuya conductividad se puede controlar. Al unir un cristal tipo P (rico en cargas positivas o huecos) con uno tipo N (rico en electrones), se crea la <strong>Unión PN</strong>, formando una barrera interna de energía que requiere aproximadamente 0.7V para ser superada.</p>
                     
-                   <div style="margin: 1.5rem 0; text-align: center;">
-    <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 8px; font-weight: bold;">Esquema Visual: Unión PN</p>
-    <div style="display: inline-flex; border-radius: 10px; overflow: hidden; border: 2px solid var(--verde-medio); box-shadow: 0 4px 10px rgba(0,0,0,0.02); font-weight: bold; width: 100%; max-width: 320px; height: 60px;">
-        <div style="flex: 1; background-color: #ffb6c1; color: #7d3c4c; display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 0.9rem;">
-            <span>Zona P</span>
-            <span style="font-size: 0.7rem; font-weight: normal;">(Ánodo +)</span>
-        </div>
-        <div style="width: 5px; background-color: var(--verde-oscuro);"></div>
-        <div style="flex: 1; background-color: var(--verde-pastel); color: var(--verde-oscuro); display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 0.9rem;">
-            <span>Zona N</span>
-            <span style="font-size: 0.7rem; font-weight: normal;">(Cátodo -)</span>
-        </div>
-    </div>
-    <p style="font-size: 0.8rem; color: var(--texto-secundario); margin-top: 6px;">Barrera de potencial interna: ≈ 0.7V</p>
-</div>
+                    <div style="margin: 1.5rem 0; text-align: center;">
+                        <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 8px; font-weight: bold;">Esquema Visual: Unión PN</p>
+                        <div style="display: inline-flex; border-radius: 10px; overflow: hidden; border: 2px solid var(--verde-medio); box-shadow: 0 4px 10px rgba(0,0,0,0.02); font-weight: bold; width: 100%; max-width: 320px; height: 60px;">
+                            <div style="flex: 1; background-color: #ffb6c1; color: #7d3c4c; display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 0.9rem;">
+                                <span>Zona P</span>
+                                <span style="font-size: 0.7rem; font-weight: normal;">(Ánodo +)</span>
+                            </div>
+                            <div style="width: 5px; background-color: var(--verde-oscuro);"></div>
+                            <div style="flex: 1; background-color: var(--verde-pastel); color: var(--verde-oscuro); display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 0.9rem;">
+                                <span>Zona N</span>
+                                <span style="font-size: 0.7rem; font-weight: normal;">(Cátodo -)</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--texto-secundario); margin-top: 6px;">Barrera de potencial interna: ≈ 0.7V</p>
+                    </div>
+                </div>
 
                 <div class="concepto-card">
                     <h3>Diodos Convencionales</h3>
@@ -343,10 +353,6 @@
                 <div class="concepto-card">
                     <h3>Diodo Zener</h3>
                     <p>A diferencia de los diodos comunes, el Zener está diseñado para operar de forma segura en su zona de "ruptura inversa". Al alcanzar un voltaje específico, conduce en sentido inverso manteniendo ese nivel de voltaje constante.</p>
-                    <div class="aplicacion-box">
-                        <h4>🚀 Aplicación Real:</h4>
-                        <p><strong>Reguladores de Voltaje:</strong> Protegen circuitos electrónicos integrados sensibles asegurando que nunca reciban picos de tensión dañinos.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -362,25 +368,32 @@
             <div class="conceptos-grid">
                 <div class="concepto-card">
                     <h3>¿Qué es el BJT y cómo se Polariza?</h3>
-                    <p>El BJT cuenta con tres terminales: Base, Colector y Emisor. La polarización consiste en aplicar los voltajes correctos en sus terminales para definir de qué manera se comportará el flujo electrónico del dispositivo.</p>
+                    <p>El BJT cuenta con tres terminales: Base, Colector y Emisor. La pequeña corriente inyectada en la base determina la cantidad de corriente principal que pasará entre el Colector y el Emisor.</p>
+                    
+                    <div style="margin: 1.5rem 0; text-align: center;">
+                        <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 8px; font-weight: bold;">Esquema Operativo: Transistor NPN</p>
+                        <div style="position: relative; display: inline-block; background-color: var(--morado-pastel); border: 2px solid #b39ddb; border-radius: 8px; padding: 15px; width: 100%; max-width: 320px; color: var(--morado-oscuro); font-weight: bold;">
+                            <div style="font-size: 0.85rem; margin-bottom: 8px;">COLECTOR (Entrada de flujo fuerte)</div>
+                            <div style="border-top: 3px dashed #7e57c2; position: relative; height: 10px; overflow: hidden; margin-bottom: 5px;">
+                                <div class="punto-corriente" style="animation-duration: 0.8s;"></div>
+                            </div>
+                            <div style="background-color: #7e57c2; color: white; font-size: 0.75rem; padding: 3px; display: inline-block; border-radius: 4px; margin: 5px 0;">
+                                BASE (Control manual: activa el flujo)
+                            </div>
+                            <div style="border-top: 3px dashed #7e57c2; position: relative; height: 10px; overflow: hidden; margin-top: 5px;">
+                                <div class="punto-corriente" style="animation-duration: 0.8s;"></div>
+                            </div>
+                            <div style="font-size: 0.85rem; margin-top: 8px;">EMISOR (Salida combinada)</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="concepto-card">
-                    <h3>Regiones de Operación</h3>
-                    <p>Dependiendo de las corrientes aplicadas, opera en tres estados:</p>
-                    <ul>
-                        <li><strong>Corte:</strong> No hay corriente en la base; el transistor actúa como un interruptor totalmente abierto.</li>
-                        <li><strong>Saturación:</strong> Corriente máxima en la base; actúa como un interruptor cerrado permitiendo paso total.</li>
-                        <li><strong>Región Activa:</strong> La corriente de salida es proporcional a la de entrada, ideal para amplificación.</li>
-                    </ul>
-                </div>
-
-                <div class="concepto-card">
-                    <h3>Conmutación con BJT</h3>
-                    <p>Consiste en forzar al transistor a saltar únicamente entre los extremos de Corte y Saturación de forma ultra veloz, omitiendo la etapa activa de amplificación.</p>
+                    <h3>Regiones de Operación y Conmutación</h3>
+                    <p>Dependiendo de las corrientes aplicadas, opera en tres estados: <strong>Corte</strong> (apagado total como interruptor abierto), <strong>Saturación</strong> (encendido total como interruptor cerrado) y <strong>Región Activa</strong> (amplificador de señal lineal).</p>
                     <div class="aplicacion-box">
                         <h4>🚀 Aplicación Real:</h4>
-                        <p>Controlar desde un microcontrolador de baja potencia (como un Arduino o Raspberry) el encendido y apagado rápido de motores eléctricos de CC o relés de potencia.</p>
+                        <p>Controlar desde un microcontrolador de baja potencia (como un Arduino) el encendido y apagado de motores eléctricos pesados de corriente continua.</p>
                     </div>
                 </div>
             </div>
@@ -397,16 +410,27 @@
             <div class="conceptos-grid">
                 <div class="concepto-card">
                     <h3>Estructura del FET / MOSFET</h3>
-                    <p>Son transistores controlados por <strong>Voltaje</strong> en su terminal de Compuerta (Gate), en lugar de corriente. Su compuerta tiene un aislamiento microscópico de dióxido de silicio, lo que significa que su consumo de corriente de control es prácticamente cero.</p>
+                    <p>Son transistores controlados enteramente por <strong>Voltaje</strong> en su terminal de Compuerta (Gate), en lugar de corriente. Su compuerta tiene un aislamiento microscópico de dióxido de silicio, lo que significa que su consumo de corriente de control es prácticamente cero.</p>
+                    
+                    <div style="margin: 1.5rem 0; text-align: center;">
+                        <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 8px; font-weight: bold;">Funcionamiento del Canal del MOSFET</p>
+                        <div style="display: flex; flex-direction: column; align-items: center; background: #e3f2fd; border: 2px solid #90caf9; border-radius: 10px; padding: 12px; max-width: 320px; margin: 0 auto; color: #1565c0;">
+                            <div style="font-size: 0.75rem; font-weight: bold; background: #1565c0; color: white; padding: 2px 8px; border-radius: 10px; margin-bottom: 8px;">
+                                Compuerta (Gate) aislada por Voltaje
+                            </div>
+                            <div style="width: 100%; background: white; border: 1px dashed #90caf9; height: 35px; position: relative; border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 0.8rem; font-weight: bold;">
+                                <span>Drenador (D)</span>
+                                <div class="punto-corriente" style="background-color: #2196f3; animation-duration: 1.5s;"></div>
+                                <span>Surtidor (S)</span>
+                            </div>
+                            <span style="font-size: 0.75rem; margin-top: 6px; color: var(--texto-secundario);">El voltaje crea un campo magnético que abre el canal.</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="concepto-card">
                     <h3>Amplificadores con MOSFET</h3>
                     <p>Gracias a su altísima resistencia o impedancia de entrada, los MOSFET capturan señales eléctricas minúsculas e inestables y las recrean a gran escala de potencia sin alterar ni distorsionar la señal original.</p>
-                    <div class="aplicacion-box">
-                        <h4>🚀 Aplicación Real:</h4>
-                        <p>Procesamiento de señales de audio de alta fidelidad y en las etapas de amplificación de sistemas de telecomunicaciones inalámbricas.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -421,26 +445,30 @@
 
             <div class="conceptos-grid">
                 <div class="concepto-card">
-                    <h3>SCR (Rectificador Controlado de Silicio)</h3>
-                    <p>Es un diodo convencional de potencia provisto de una tercera terminal de disparo llamada compuerta (Gate). Conduce en una dirección y se mantiene encendido de forma autónoma hasta que la corriente principal del circuito desciende por completo a cero.</p>
-                    <div class="aplicacion-box">
-                        <h4>🚀 Aplicación Real:</h4>
-                        <p>Sistemas de seguridad industrial, rectificación controlada de motores pesados de fábricas y alarmas contra incendios.</p>
-                    </div>
-                </div>
-
-                <div class="concepto-card">
-                    <h3>TRIAC</h3>
-                    <p>Es un dispositivo documento bidireccional equivalente a tener dos SCR integrados en sentido opuesto. Esto le da la increíble propiedad de controlar flujos de corriente eléctrica en ambos semiciclos de la Corriente Alterna (AC).</p>
-                    <div class="aplicacion-box">
-                        <h4>🚀 Aplicación Real:</h4>
-                        <p><strong>Atenuadores de luz (Dimmers):</strong> Perillas giratorias domésticas para regular la intensidad de las lámparas y el control de velocidad en electrodomésticos como licuadoras o taladros.</p>
+                    <h3>SCR y TRIAC</h3>
+                    <p>El <strong>SCR</strong> es un diodo de potencia con una terminal de disparo (Gate) que conduce en una dirección. El <strong>TRIAC</strong> es bidireccional, lo que le da la increíble propiedad de controlar flujos grandes de corriente eléctrica en ambos semiciclos de la Corriente Alterna (AC).</p>
+                    
+                    <div style="margin: 1.5rem 0; text-align: center;">
+                        <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 8px; font-weight: bold;">Comportamiento en Potencia (Tiristor Activo)</p>
+                        <div style="display: inline-flex; align-items: center; justify-content: center; background: #fff3e0; border: 2px solid #ffb74d; padding: 15px; border-radius: 10px; max-width: 320px; width: 100%;">
+                            <div style="text-align: left; margin-right: 15px;">
+                                <div style="font-size: 0.8rem; font-weight: bold; color: #e65100;">Estado del Tiristor:</div>
+                                <div style="font-size: 0.75rem; color: var(--texto-secundario);">Retención de Enganche</div>
+                            </div>
+                            <div style="animation: parpadeo-sw 1.2s infinite ease-in-out; color: white; padding: 8px 14px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                GATE DISPARADO
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="concepto-card">
                     <h3>Introducción a la Electrónica de Potencia</h3>
                     <p>Es la subdisciplina encargada de transformar, adaptar y controlar voltajes y corrientes de gran magnitud (kilovatios) utilizando dispositivos semiconductores de estado sólido de alta velocidad de respuesta.</p>
+                    <div class="aplicacion-box">
+                        <h4>🚀 Aplicación Real:</h4>
+                        <p><strong>Atenuadores de luz (Dimmers) y controles de velocidad:</strong> Perillas giratorias domésticas para regular la intensidad de las lámparas y la velocidad de motores en licuadoras o taladros.</p>
+                    </div>
                 </div>
             </div>
         </section>
