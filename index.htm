@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio - Electricidad y Electrónica</title>
+    <title>Mi Portafolio - Electricidad y Electrónica (Corregido)</title>
     <style>
-        /* Variables con los colores exactos de tus botones */
+        /* Variables con tus colores exactos */
         :root {
             --rosa-boton: #ffb6c1;
             --morado-boton: #e8dff5;
-            --verde-boton: #8bc34a; /* Tono verde de tu captura */
+            --verde-boton: #8bc34a;
             --gris-boton: #eeeeee;
-            --texto-morado: #6a1b9a; /* Color exacto para el título principal */
+            --texto-morado: #6a1b9a;
             --texto-oscuro: #333333;
         }
 
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* FONDO ESTILO AURORA BOREAL (Luminoso y con movimiento suave) */
+        /* FONDO DINÁMICO ESTILO AURORA */
         body {
             min-height: 100vh;
             display: flex;
@@ -41,7 +41,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* CONTENEDOR PRINCIPAL QUE ACOMODA TODO EN LA PANTALLA */
         .contenedor-global {
             display: flex;
             align-items: center;
@@ -49,10 +48,9 @@
             gap: 40px;
             max-width: 1300px;
             width: 100%;
-            flex-wrap: wrap; /* Se adapta si la pantalla es pequeña */
+            flex-wrap: wrap;
         }
 
-        /* COLUMNAS LATERALES PARA TUS IMÁGENES */
         .columna-fotos {
             display: flex;
             flex-direction: column;
@@ -73,13 +71,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 15px;
-            color: #6a1b9a;
-            font-size: 0.9rem;
-            font-weight: 500;
-            backdrop-filter: blur(4px); /* Efecto vidrio esmerilado suave */
+            backdrop-filter: blur(4px);
             transition: transform 0.3s ease;
+            overflow: hidden; /* Mantiene la imagen dentro de los bordes redondeados */
+        }
+
+        /* --- ESTILO CORREGIDO PARA QUE NO SALGAN CORTADAS --- */
+        .caja-imagen img {
+            width: 100%;
+            height: 100%;
+            /* 'contain' ajusta la imagen completa para que se vea entera, sin cortes */
+            object-fit: contain; 
+            border-radius: 12px;
         }
 
         .caja-imagen:hover {
@@ -87,7 +90,7 @@
             background: rgba(255, 255, 255, 0.6);
         }
 
-        /* TARJETA CENTRAL DEL PORTAFOLIO (Fiel a tu referencia) */
+        /* TARJETA CENTRAL */
         .tarjeta-portafolio {
             background-color: #ffffff;
             border-radius: 24px;
@@ -101,7 +104,6 @@
             min-width: 320px;
         }
 
-        /* TÍTULO PRINCIPAL "Mi Portafolio ♥" */
         .tarjeta-portafolio h1 {
             color: var(--texto-morado);
             font-size: 2.2rem;
@@ -119,7 +121,6 @@
             margin-bottom: 30px;
         }
 
-        /* SEPARADOR INFERIOR GRIS SUAVE */
         .separador {
             border: none;
             height: 1px;
@@ -127,7 +128,6 @@
             margin: 25px 0;
         }
 
-        /* ESTILO GENERAL DE LOS BOTONES */
         .boton-enlace {
             display: block;
             text-decoration: none;
@@ -145,28 +145,11 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.06);
         }
 
-        /* COLORES PERSONALIZADOS PARA CADA BOTÓN (Respetando tus tonos) */
-        .btn-leyes {
-            background-color: var(--rosa-boton);
-            color: #ffffff;
-        }
+        .btn-leyes { background-color: var(--rosa-boton); color: #ffffff; }
+        .btn-taller { background-color: var(--morado-boton); color: #512da8; }
+        .btn-electronica { background-color: var(--verde-boton); color: #ffffff; }
+        .btn-principal { background-color: var(--gris-boton); color: #555555; }
 
-        .btn-taller {
-            background-color: var(--morado-boton);
-            color: #512da8;
-        }
-
-        .btn-electronica {
-            background-color: var(--verde-boton);
-            color: #ffffff;
-        }
-
-        .btn-principal {
-            background-color: var(--gris-boton);
-            color: #555555;
-        }
-
-        /* PIE DE PÁGINA */
         .footer-texto {
             font-size: 0.75rem;
             color: #999999;
@@ -180,15 +163,15 @@
         
         <div class="columna-fotos">
             <div class="caja-imagen">
-                <img src="https://preview.redd.it/ajeon-jungkook-wtf-v0-v-format%3Djpg%26auto%3Dwebp%26s%3D9c27b348c4eec058f7ed0bcb635a801239e49042" 
-                     alt="Foto Jungkook" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                <img src="https://media.glamour.mx/photos/69a5fef02bf28372a0263682/master/w_1600,c_limit/SP26_JK_PR_nologo_13.jpg" 
+                     alt="Foto Jungkook (Contain)">
             </div>
             <div class="caja-imagen">
                 <img src="https://fotos.perfil.com//2026/01/09/900/0/kim-taehyung-para-gq-2026-2167226.jpg" 
-                     alt="Foto Taehyung" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                     alt="Foto Taehyung (Contain)">
             </div>
         </div>
-        
+
         <div class="tarjeta-portafolio">
             <h1>Mi Portafolio ♥</h1>
             <p>Explora las secciones de electricidad y electrónica:</p>
@@ -206,8 +189,10 @@
 
         <div class="columna-fotos">
             <div class="caja-imagen">
-                <img src="https://img2.rtve.es/im/6788662/?w=900" 
-                     alt="Junji Ito" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                <img src="https://img2.rtve.es/im/6788662/?w=900" alt="Foto RTVE (Contain)">
+            </div>
+            <div class="caja-imagen">
+                <img src="https://via.placeholder.com/280x200/ffb6c1/6a1b9a?text=Espacio+para+Imagen+4" alt="Espacio para Imagen 4">
             </div>
         </div>
 
