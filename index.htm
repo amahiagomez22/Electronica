@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio - Electricidad y Electrónica (Corregido)</title>
+    <title>Mi Portafolio - Electricidad y Electrónica</title>
     <style>
-        /* Variables con tus colores exactos */
+        /* Variables con tus colores exactos de botones */
         :root {
             --rosa-boton: #ffb6c1;
             --morado-boton: #e8dff5;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* FONDO DINÁMICO ESTILO AURORA */
+        /* FONDO DINÁMICO AURORA (Tonos muy claros y suaves) */
         body {
             min-height: 100vh;
             display: flex;
@@ -41,108 +41,101 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* CONFIGURACIÓN DEL CONTENEDOR FLUIDO */
         .contenedor-global {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 40px;
-            max-width: 1300px;
+            max-width: 1250px;
             width: 100%;
             flex-wrap: wrap;
         }
 
+        /* COLUMNAS LATERALES */
         .columna-fotos {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
             flex: 1;
-            min-width: 250px;
+            min-width: 260px;
             align-items: center;
         }
 
-        /* CAJAS CONTENEDORAS PARA LAS IMÁGENES */
+        /* --- NUEVO ESTILO DE IMAGEN LIMPIO (SIN BORDES EXTRAÑOS NI CORTES) --- */
         .caja-imagen {
             width: 100%;
             max-width: 280px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px dashed rgba(106, 27, 154, 0.3);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(4px);
-            transition: transform 0.3s ease;
-            overflow: hidden; /* Mantiene la imagen dentro de los bordes redondeados */
+            display: block;
+            border-radius: 16px;
+            /* Una sombra muy suave que le da profundidad sobre la aurora */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* --- ESTILO CORREGIDO PARA QUE NO SALGAN CORTADAS --- */
         .caja-imagen img {
             width: 100%;
-            height: 100%;
-            /* 'contain' ajusta la imagen completa para que se vea entera, sin cortes */
-            object-fit: contain; 
-            border-radius: 12px;
+            height: auto;
+            display: block;
+            border-radius: 16px; /* Ajuste perfecto para las esquinas de tus fotos */
         }
 
+        /* Efecto flotante sutil al pasar el mouse por encima */
         .caja-imagen:hover {
-            transform: scale(1.03);
-            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(106, 27, 154, 0.12);
         }
 
-        /* TARJETA CENTRAL */
+        /* TARJETA CENTRAL ORIGINAL (Fiel a tu diseño inicial) */
         .tarjeta-portafolio {
             background-color: #ffffff;
             border-radius: 24px;
             padding: 40px 30px;
             width: 100%;
-            max-width: 520px;
-            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.05);
+            max-width: 480px;
+            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.04);
             text-align: center;
-            border: 1px solid rgba(232, 223, 245, 0.6);
-            flex: 1.5;
+            border: 1px solid rgba(232, 223, 245, 0.5);
+            flex: 1.4;
             min-width: 320px;
         }
 
+        /* Título "Mi Portafolio ♥" idéntico a tu captura */
         .tarjeta-portafolio h1 {
             color: var(--texto-morado);
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: bold;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            margin-bottom: 12px;
         }
 
         .tarjeta-portafolio p {
             color: var(--texto-oscuro);
             font-size: 0.95rem;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .separador {
             border: none;
             height: 1px;
-            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
-            margin: 25px 0;
+            background: linear-gradient(to right, transparent, #e2e2e2, transparent);
+            margin: 22px 0;
         }
 
+        /* BOTONES */
         .boton-enlace {
             display: block;
             text-decoration: none;
-            padding: 16px 20px;
-            margin-bottom: 15px;
+            padding: 15px 20px;
+            margin-bottom: 14px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .boton-enlace:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
         }
 
         .btn-leyes { background-color: var(--rosa-boton); color: #ffffff; }
@@ -152,8 +145,8 @@
 
         .footer-texto {
             font-size: 0.75rem;
-            color: #999999;
-            margin-top: 20px;
+            color: #aaaaaa;
+            margin-top: 18px;
         }
     </style>
 </head>
@@ -163,12 +156,10 @@
         
         <div class="columna-fotos">
             <div class="caja-imagen">
-                <img src="https://media.glamour.mx/photos/69a5fef02bf28372a0263682/master/w_1600,c_limit/SP26_JK_PR_nologo_13.jpg" 
-                     alt="Foto Jungkook (Contain)">
+                <img src="https://preview.redd.it/ajeon-jungkook-wtf-v0-v-format%3Djpg%26auto%3Dwebp%26s%3D9c27b348c4eec058f7ed0bcb635a801239e49042" alt="Foto Jungkook">
             </div>
             <div class="caja-imagen">
-                <img src="https://fotos.perfil.com//2026/01/09/900/0/kim-taehyung-para-gq-2026-2167226.jpg" 
-                     alt="Foto Taehyung (Contain)">
+                <img src="https://fotos.perfil.com//2026/01/09/900/0/kim-taehyung-para-gq-2026-2167226.jpg" alt="Foto Taehyung">
             </div>
         </div>
 
@@ -176,9 +167,9 @@
             <h1>Mi Portafolio ♥</h1>
             <p>Explora las secciones de electricidad y electrónica:</p>
 
-            <a href="leyes.html" class="boton-enlace btn-leyes">1. Leyes Fundamentales</a>
-            <a href="taller.html" class="boton-enlace btn-taller">2. Taller de Investigación</a>
-            <a href="electronica.html" class="boton-enlace btn-electronica">3. Electrónica Básica</a>
+            <a href="leyes_fundamentales.html" class="boton-enlace btn-leyes">1. Leyes Fundamentales</a>
+            <a href="taller_investigacion.html" class="boton-enlace btn-taller">2. Taller de Investigación</a>
+            <a href="electronica_basica.html" class="boton-enlace btn-electronica">3. Electrónica Básica</a>
             
             <hr class="separador">
 
@@ -189,10 +180,7 @@
 
         <div class="columna-fotos">
             <div class="caja-imagen">
-                <img src="https://img2.rtve.es/im/6788662/?w=900" alt="Foto RTVE (Contain)">
-            </div>
-            <div class="caja-imagen">
-                <img src="https://via.placeholder.com/280x200/ffb6c1/6a1b9a?text=Espacio+para+Imagen+4" alt="Espacio para Imagen 4">
+                <img src="https://img2.rtve.es/im/6788662/?w=900" alt="Foto Colección">
             </div>
         </div>
 
