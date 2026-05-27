@@ -245,6 +245,59 @@
             margin-bottom: 0.3rem;
         }
 
+        /* --- ESTILOS AGREGADOS PARA LOS INTERACTIVOS DE JAVASCRIPT --- */
+        .simulador-container {
+            margin-top: 15px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--borde-suave);
+            text-align: center;
+        }
+
+        .control-slider {
+            width: 100%;
+            max-width: 250px;
+            margin: 10px 0;
+            accent-color: var(--verde-oscuro);
+        }
+
+        .led-visual {
+            width: 40px;
+            height: 40px;
+            background-color: #bbbbbb;
+            border-radius: 50% 50% 45% 45%;
+            margin: 15px auto;
+            transition: all 0.2s ease;
+            box-shadow: inset 0 2px 5px rgba(255,255,255,0.5), 0 0 0px rgba(255, 0, 0, 0);
+            position: relative;
+        }
+
+        .led-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 10px;
+            width: 20px;
+            height: 4px;
+            background: #999;
+            border-radius: 2px;
+        }
+
+        .motor-visual {
+            width: 50px;
+            height: 50px;
+            border: 4px dashed var(--verde-oscuro);
+            border-radius: 50%;
+            margin: 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--verde-oscuro);
+            background: var(--verde-pastel);
+        }
+
         /* --- ANIMACIONES CSS PARA EL CONTENIDO DINÁMICO --- */
         @keyframes fluir-corriente {
             0% { left: 0%; }
@@ -295,15 +348,11 @@
         </ul>
     </nav>
 
-   <div class="area-boton">
-
-<a href="https://amahiagomez22.github.io/Electronica/" class="boton-corazon">
-
-<span class="texto-boton">VOLVER</span>
-
-</a>
-
-</div>
+    <div class="area-boton">
+        <a href="https://amahiagomez22.github.io/Electronica/" class="boton-corazon">
+            <span class="texto-boton">VOLVER</span>
+        </a>
+    </div>
 
     <main>
         <section id="unidad1" class="unidad-section">
@@ -348,6 +397,16 @@
                 <div class="concepto-card">
                     <h3>LED (Diodo Emisor de Luz)</h3>
                     <p>Un tipo de diodo semiconductor especial que, al ser polarizado directamente, permite que los electrones recombinen liberando energía en forma de fotones de luz visible o infrarroja.</p>
+                    
+                    <div class="simulador-container">
+                        <h4>⚡ Simulador Interactivo de Brillo LED</h4>
+                        <p style="font-size: 0.85rem; color: var(--texto-secundario);">Ajusta el voltaje. El LED de silicio requiere superar el umbral de 0.7V para encender.</p>
+                        <div class="led-visual" id="ledElement"></div>
+                        <input type="range" min="0" max="3" step="0.1" value="0" class="control-slider" id="voltajeSlider">
+                        <p style="font-weight: bold; color: var(--verde-oscuro);">Voltaje: <span id="voltajeValue">0.0</span> V</p>
+                        <p style="font-size: 0.85rem; font-style: italic;" id="ledEstado">Estado: Apagado (Voltaje insuficiente)</p>
+                    </div>
+
                     <div class="aplicacion-box">
                         <h4>🚀 Aplicación Real:</h4>
                         <p>Sistemas de iluminación de alta eficiencia energética, pantallas de televisores, indicadores y semáforos.</p>
@@ -469,6 +528,15 @@
                 <div class="concepto-card">
                     <h3>Introducción a la Electrónica de Potencia</h3>
                     <p>Es la subdisciplina encargada de transformar, adaptar y controlar voltajes y corrientes de gran magnitud (kilovatios) utilizando dispositivos semiconductores de estado sólido de alta velocidad de respuesta.</p>
+                    
+                    <div class="simulador-container">
+                        <h4>🎛️ Control de Velocidad de un Motor (Dimmer)</h4>
+                        <p style="font-size: 0.85rem; color: var(--texto-secundario);">Simula un circuito TRIAC variando la potencia entregada al motor de AC.</p>
+                        <div class="motor-visual" id="motorElement">M</div>
+                        <input type="range" min="0" max="100" value="0" class="control-slider" id="potenciaSlider">
+                        <p style="font-weight: bold; color: var(--verde-oscuro);">Potencia: <span id="potenciaValue">0</span>%</p>
+                    </div>
+
                     <div class="aplicacion-box">
                         <h4>🚀 Aplicación Real:</h4>
                         <p><strong>Atenuadores de luz (Dimmers) y controles de velocidad:</strong> Perillas giratorias domésticas para regular la intensidad de las lámparas y la velocidad de motores en licuadoras o taladros.</p>
@@ -482,5 +550,69 @@
         <p> Taller Electronica Basica ♥.</p>
     </footer>
 
+    <script>
+        // --- INTERACTIVO 1: SIMULACIÓN DE LED ---
+        const voltajeSlider = document.getElementById('voltajeSlider');
+        const voltajeValue = document.getElementById('voltajeValue');
+        const ledElement = document.getElementById('ledElement');
+        const ledEstado = document.getElementById('ledEstado');
+
+        voltajeSlider.addEventListener('input', (e) => {
+            const v = parseFloat(e.target.value);
+            voltajeValue.textContent = v.toFixed(1);
+
+            if (v < 0.7) {
+                // Estado Apagado
+                ledElement.style.backgroundColor = '#bbbbbb';
+                ledElement.style.boxShadow = 'none';
+                ledEstado.textContent = 'Estado: Apagado (Voltaje menor a 0.7V)';
+                ledEstado.style.color = 'var(--texto-secundario)';
+            } else {
+                // Estado Encendido: El brillo se calcula proporcionalmente al voltaje restante
+                const factorBrillo = (v - 0.7) / 2.3; // Rango de brillo de 0 a 1
+                const alpha = 0.2 + (factorBrillo * 0.8);
+                const shadowRadius = factorBrillo * 25;
+                
+                ledElement.style.backgroundColor = `rgba(255, 71, 87, ${alpha})`;
+                ledElement.style.boxShadow = `0 0 ${shadowRadius}px rgba(255, 71, 87, ${alpha * 1.5})`;
+                ledEstado.textContent = 'Estado: Conducción directa (¡LED Encendido!)';
+                ledEstado.style.color = 'var(--verde-oscuro)';
+            }
+        });
+
+        // --- INTERACTIVO 2: SIMULACIÓN DE VELOCIDAD DE MOTOR ---
+        const potenciaSlider = document.getElementById('potenciaSlider');
+        const potenciaValue = document.getElementById('potenciaValue');
+        const motorElement = document.getElementById('motorElement');
+
+        let anguloRotacion = 0;
+        let animationFrameId = null;
+        let velocidadActual = 0;
+
+        function girarMotor() {
+            if (velocidadActual > 0) {
+                anguloRotacion += velocidadActual;
+                motorElement.style.transform = `rotate(${anguloRotacion}deg)`;
+                animationFrameId = requestAnimationFrame(girarMotor);
+            }
+        }
+
+        potenciaSlider.addEventListener('input', (e) => {
+            const potencia = parseInt(e.target.value);
+            potenciaValue.textContent = potencia;
+            
+            // Mapeamos el porcentaje a velocidad de rotación angular
+            velocidadActual = potencia * 0.2; 
+
+            if (velocidadActual > 0) {
+                if (!animationFrameId) {
+                    girarMotor();
+                }
+            } else {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        });
+    </script>
 </body>
 </html>
